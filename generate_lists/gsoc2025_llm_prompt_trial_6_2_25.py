@@ -37,7 +37,7 @@ oncotree_codes_info = {
 }
 print(f"Research Assignments Loaded: {len(oncotree_codes_info)} cancer types to process.")
 
-"""## 6-9-25: see documentaion for prameters that can be set during prompt engineering:https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/adjust-parameter-values
+"""## 6-9-25: see documentaion for parameters that can be set during prompt engineering:https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/adjust-parameter-values
 
 Not only Temperature, but also:
 1. Max output tokens (here no need since no need to limit the response)
