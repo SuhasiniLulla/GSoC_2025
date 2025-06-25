@@ -42,6 +42,8 @@ Create a `.env` file in the root directory of the project with the following for
 
 ```GENAI_API_KEY= YOUR_API_KEY_HERE```
 
+## Run Script
+
 **Run script to generate lists, adding the name of the OncoTree input JSON file**:
 
 ```uv run --no-project gsoc2025_llm_prompt_trial_6-2-25.py ONCOTREE_FILE_NAME.json```
