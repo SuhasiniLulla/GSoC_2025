@@ -31,6 +31,17 @@ This project supports `uv` for fast and reproducible Python environments.
 
 ```uv pip install -r requirements.txt```
 
+
+## 🔐 Environment Variables
+
+This project uses environment variables to manage sensitive information like API keys.
+
+Create a `.env` file in the root directory of the project with the following format:
+
+```touch .env```
+
+```GENAI_API_KEY= YOUR_API_KEY_HERE```
+
 **Run script to generate lists, adding the name of the OncoTree input JSON file**:
 
 ```uv run --no-project gsoc2025_llm_prompt_trial_6-2-25.py ONCOTREE_FILE_NAME.json```
