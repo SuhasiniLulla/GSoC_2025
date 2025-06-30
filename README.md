@@ -11,25 +11,16 @@ This project, developed as part of Google Summer of Code 2025, focuses on genera
 
 This project supports `uv` for fast and reproducible Python environments.
 
-**Setup virtual environment**:
-
-```python3 -m venv```
-
-**Activate virtual environment**:
-
-```source venv/bin/activate```  # macOS/Linux
-
-```venv\\Scripts\\activate```   # Windows
 
 **Install `uv`**:
 
-   ```bash
-   curl -LsSf https://astral.sh/uv/install.sh | sh
-   ```
+   ```pip install uv```
 
 **Install dependencies**:
 
-```uv pip install -r requirements.txt```
+To install minimal dependencies in the pyproject.toml 
+
+```uv sync```
 
 
 ## 🔐 Environment Variables
@@ -46,4 +37,4 @@ Create a `.env` file in the root directory of the project with the following for
 
 **Run script to generate lists, adding the name of the OncoTree input JSON file**:
 
-```uv run --no-project gsoc2025_llm_prompt_trial_6-2-25.py ONCOTREE_FILE_NAME.json```
+```uv run gsoc2025_llm_prompt_trial_6-2-25.py -i ONCOTREE_FILE_NAME.json```
