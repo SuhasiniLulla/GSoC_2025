@@ -6,7 +6,7 @@ from google.generativeai.types import GenerationConfig
 from typing import List, Dict, Literal
 import typer
 from pathlib import Path
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 load_dotenv()
@@ -221,7 +221,7 @@ def generate_lists(input_oncotree: Path = typer.Option(..., "--input_oncotree_fi
 
     print(all_results)
 
-    with open("export_lists.json", "w") as f:
+    with open("gene_pathway_lists/export_lists.json", "w") as f:
         json.dump(all_results, f, indent=2)
 
 if __name__ == "__main__":
