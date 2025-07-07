@@ -31,10 +31,10 @@ Create a `.env` file in the root directory of the project with the following for
 
 ```touch .env```
 
-```GENAI_API_KEY= YOUR_API_KEY_HERE```
+```LLM_API_KEY= YOUR_API_KEY_HERE```
 
 ## Run Script
 
 **Run script to generate lists, adding the name of the OncoTree input JSON file**:
 
-```uv run gsoc2025_llm_prompt_trial_6-2-25.py -i ONCOTREE_FILE_NAME.json```
+```uv run llm_mine_gene_pathway_assoc_oncotree.py -i ONCOTREE_FILE_NAME.json```

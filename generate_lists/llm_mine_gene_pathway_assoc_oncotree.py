@@ -9,6 +9,7 @@ from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict
 
 
+
 load_dotenv()
 YOUR_API_KEY = os.getenv("LLM_API_KEY")
 genai.configure(api_key=YOUR_API_KEY)
