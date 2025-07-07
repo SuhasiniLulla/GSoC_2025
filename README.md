@@ -31,7 +31,7 @@ Create a `.env` file in the root directory of the project with the following for
 
 ```touch .env```
 
-```GENAI_API_KEY= YOUR_API_KEY_HERE```
+```LLM_API_KEY= YOUR_API_KEY_HERE```
 
 ## Run Script
 
