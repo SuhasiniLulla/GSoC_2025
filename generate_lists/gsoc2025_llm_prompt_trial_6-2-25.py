@@ -1,4 +1,3 @@
-from google import genai
 from dotenv import load_dotenv
 import os
 import json
@@ -11,7 +10,7 @@ from pydantic import BaseModel, Field
 
 
 load_dotenv()
-YOUR_API_KEY = os.getenv("GENAI_API_KEY")
+YOUR_API_KEY = os.getenv("LLM_API_KEY")
 genai.configure(api_key=YOUR_API_KEY)
 
 class CodeReferences(BaseModel):
@@ -60,8 +59,7 @@ class GenerateLists(BaseModel):
     associated_genes: List[str]
     associated_pathways: AssociatedPathways
 
-    class Config:
-        validate_by_name = True
+    model_config = ConfigDict(validate_by_name = True)
 
 def generate_gemini_compatible_schema(model: BaseModel) -> Dict[str, any]:
     schema = {
@@ -97,15 +95,15 @@ def generate_gemini_compatible_schema(model: BaseModel) -> Dict[str, any]:
 
 # Auto-generate JSON schema from the Pydantic model
 SCHEMA_JSON = generate_gemini_compatible_schema(GenerateLists)
+TEMPERATURE = 0.25
 
-
-PROMPT_TEMPLATE = """Based on scientific literature in PubMed, current genetic testing practices in oncology clinics,
+PROMPT_TEMPLATE = """Based on scientific literature in PubMed, current genetic testing practices in oncology clinics, gene-disease association curations in ClinGen, OMIM, GeneReviews, and similar expert or peer reviewed resoursces,
 and public tumor sequencing databases such as cBioPortal, and COSMIC, list the genes
 and pathways, mutations in which are associated with {cancer_name} ({oncotree_code}).
 Different ontologies have different terms/codes to depict the same cancer sub-type.
 {oncotree_code} is the OncoTree code that is the same as {ncit_code} (NCIt) and {umls_code} (UMLS).
 Use these codes to gather as much literature/data as possible to provide a comprehensive list
-of genes and pathways in JSON structured format. The associated gene list should be in order of strength and likelihood of association. Gene list should be high quality and accurate and should not exceed 50 in count. The JSON should have top-level keys:
+of genes and pathways in JSON structured format. The associated gene list should be ranked by strength and likelihood of association such that the first gene in the list has the strongest association with the cancer type and the last gene in the list has the weakest association with the cancer type. The gene list should be of high quality, accurate, and should not exceed 50 in count. The JSON should have top-level keys:
 "oncotree_code", "cancer_name" (full name of the code), "other_codes_used_for_data_gathering" (dictionary with keys NCIt and UMLS), "associated_genes" (a list of gene symbols), and "associated_pathways" (a dictionary with keys being each pathway name in the list: ['prostate_cancer_ar_signaling',
  'prostate_cancer_ar_and_steroid_synthesis_enzymes',
  'prostate_cancer_steroid_inactivating_genes',
@@ -172,7 +170,7 @@ def generate_lists(input_oncotree: Path = typer.Option(..., "--input_oncotree_fi
                 "UMLS": umls
             }
 
-    TEMPERATURE = 0.25
+    
 
     generation_config = GenerationConfig(
         temperature=TEMPERATURE,
@@ -222,7 +220,6 @@ def generate_lists(input_oncotree: Path = typer.Option(..., "--input_oncotree_fi
             all_results[oncotree_code] = {"error": str(e), "details_provided": details}
 
     print(all_results)
-
 
     with open("export_lists.json", "w") as f:
         json.dump(all_results, f, indent=2)
