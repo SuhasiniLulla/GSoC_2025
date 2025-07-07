@@ -9,6 +9,7 @@ import typer
 from pathlib import Path
 from pydantic import BaseModel, Field
 
+
 load_dotenv()
 YOUR_API_KEY = os.getenv("GENAI_API_KEY")
 genai.configure(api_key=YOUR_API_KEY)
@@ -140,11 +141,13 @@ of genes and pathways in JSON structured format. The associated gene list should
  'ovarian_cancer_putative_tumor_suppressor_genes_in_epithelial_ovarian_cancer',
  'general_regulation_of_ribosomal_protein_synthesis_and_cell_growth'] and the value being 'yes' if associated with cancer sub-type or 'no' if pathway not associated with cancer sub-type)."""
 
+
 app = typer.Typer()
 
 @app.command()
 def generate_lists(input_oncotree: Path = typer.Option(..., "--input_oncotree_filepath", "-i", help="Path to the OncoTree JSON file")):
     typer.echo(f"Input file path: {input_oncotree}")
+
     if not input_oncotree.exists():
         typer.echo(f"File not found: {input_oncotree}")
         raise typer.Exit(code=1)
@@ -175,6 +178,7 @@ def generate_lists(input_oncotree: Path = typer.Option(..., "--input_oncotree_fi
         temperature=TEMPERATURE,
         response_mime_type="application/json",  # Ask Gemini to output JSON directly
         response_schema= SCHEMA_JSON
+
     )
 
     model = genai.GenerativeModel(
@@ -204,6 +208,7 @@ def generate_lists(input_oncotree: Path = typer.Option(..., "--input_oncotree_fi
 
             # Store the structured data
             all_results[oncotree_code] = parsed_model.model_dump()
+
       
         except Exception as e:
             print(f"  Error processing {oncotree_code}: {e}")
@@ -218,7 +223,8 @@ def generate_lists(input_oncotree: Path = typer.Option(..., "--input_oncotree_fi
 
     print(all_results)
 
-    with open("export_lists_6-30-25.json", "w") as f:
+
+    with open("export_lists.json", "w") as f:
         json.dump(all_results, f, indent=2)
 
 if __name__ == "__main__":
