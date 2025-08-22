@@ -23,7 +23,7 @@ To install minimal dependencies in the pyproject.toml
 ```uv sync```
 
 
-## 🔐 Environment Variables
+## Environment Variables
 
 This project uses environment variables to manage sensitive information like API keys.
 
@@ -31,10 +31,17 @@ Create a `.env` file in the root directory of the project with the following for
 
 ```touch .env```
 
-```LLM_API_KEY= YOUR_API_KEY_HERE```
+```LLM_API_KEY= YOUR_LLM_API_KEY_HERE```
+
+```NCBI_API_KEY= YOUR_NCBI_API_KEY_HERE```
 
 ## Run Script
 
 **Run script to generate lists, adding the name of the OncoTree input JSON file**:
 
-```uv run llm_mine_gene_pathway_assoc_oncotree.py -i ONCOTREE_FILE_NAME.json```
+```uv run --active generate_lists/llm_mine_gene_pathway_assoc_oncotree.py -i ONCOTREE_FILE_NAME.json```
+
+
+**Run script to validate gene, pathway, and moelcular subtype lists**:
+
+```uv run --active generate_lists/validate_genelist.py -i PATH_TO_LLM_GENERATED_LIST_ABOVE.json -ref assets/mmc1.xlsx```
