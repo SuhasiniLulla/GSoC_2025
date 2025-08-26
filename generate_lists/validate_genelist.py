@@ -13,8 +13,6 @@ from dotenv import load_dotenv
 from google.generativeai.types import GenerationConfig
 from pydantic import BaseModel
 
-TEMPERATURE = 0
-
 load_dotenv()
 YOUR_API_KEY = os.getenv("LLM_API_KEY")
 NCBI_API_KEY = os.getenv("NCBI_API_KEY")
@@ -22,7 +20,7 @@ genai.configure(api_key=YOUR_API_KEY)
 
 
 class Answer(BaseModel):
-    is_valid: Literal["yes", "no"]
+    is_valid: Literal["yes", "no", "unknown"]
     explanation: str
 
 
@@ -66,7 +64,7 @@ def generate_gemini_compatible_schema(model: BaseModel) -> Dict[str, Any]:
 
 
 # Auto-generate JSON schema from the Pydantic model
-SCHEMA_JSON = generate_gemini_compatible_schema(Answer)
+schema_json = generate_gemini_compatible_schema(Answer)
 
 PROMPT_TEMPLATE_GENE = """Given these abstracts from PubMed below, Answer 'Yes' or 'No': Is the gene {variable} associated with the cancer type {cancer_type}. Make sure the given text mentions the exact gene and cancer types given and no other abbreviations that could resemble them. Summarize the association made in the given text in 1 line. Output your response in json format with top level keys being 'is_valid' with a literal value of 'yes' or 'no' and 'explanation' with value of not more than 1 sentence explaining association or no association based on the given text. Here is the given text = {efetch_output}.
 """
@@ -85,17 +83,6 @@ with value of not more than 1 sentence explaining association or no association 
 'explanation'. Here is the given text = {efetch_output}.
 """
 
-generation_config = GenerationConfig(
-    temperature=TEMPERATURE,
-    response_mime_type="application/json",  # Ask Gemini to output JSON directly
-    response_schema=SCHEMA_JSON,
-)
-
-model = genai.GenerativeModel(
-    model_name="gemini-2.0-flash",
-    generation_config=generation_config,
-)
-
 
 def esearch_efetch(query):
     # assemble the esearch URL
@@ -109,7 +96,7 @@ def esearch_efetch(query):
         "usehistory": "y",
         "api_key": NCBI_API_KEY,
     }
-    response_esearch = requests.get(url, params=params, timeout=(3, 10))
+    response_esearch = requests.get(url, params=params, timeout=(3, 30))
     id_pattern = r"<Id>(\d+)<\/Id>"
     if id_pattern:
         all_ids = re.findall(id_pattern, response_esearch.text)
@@ -127,7 +114,8 @@ def esearch_efetch(query):
             "usehistory": "y",
             "api_key": NCBI_API_KEY,
         }
-        response_efetch = requests.get(efetch_url, params=params, timeout=(3, 10))
+        response_efetch = requests.get(efetch_url, params=params, timeout=(3, 30))
+        time.sleep(0.3)
         output = response_efetch.text
     else:
         output = "no PMIDs found"
@@ -135,22 +123,35 @@ def esearch_efetch(query):
     return (output, id_string)
 
 
-def llm_to_validate_association(prompt_template, variable, cancer_type, efetch_output):
+def llm_to_validate_association(
+    prompt_template, variable, cancer_type, efetch_output, llm_model, temperature
+):
+
+    generation_config = GenerationConfig(
+        temperature=temperature,
+        response_mime_type="application/json",  # Ask Gemini to output JSON directly
+        response_schema=schema_json,
+    )
+
+    model = genai.GenerativeModel(
+        model_name=llm_model,
+        generation_config=generation_config,
+    )
+
     PROMPT_TEMPLATE = prompt_template
     current_prompt = PROMPT_TEMPLATE.format(
         variable=variable, cancer_type=cancer_type, efetch_output=efetch_output
     )
-    # Send the question to the AI
+
     try:
         response = model.generate_content(current_prompt)
-        # json_output_str = response.text
-
-        # Convert the JSON string into a Python dictionary
         parsed_json_data_dict = json.loads(response.text)
         parsed_model = Answer(**parsed_json_data_dict)
 
     except Exception as e:
         print(f"  Error processing : {e}")
+        parsed_model = Answer(is_valid="unknown", explanation="LLM parsing failed")
+
         # Log errors, and check response for more details if available
         if "response" in locals() and hasattr(response, "prompt_feedback"):
             print(f"    Prompt Feedback: {response.prompt_feedback}")
@@ -174,7 +175,7 @@ app = typer.Typer()
 
 
 @app.command()
-def validate_genes(
+def validate(
     input_oncotree_gene_file: Path = typer.Option(
         ...,
         "--input_oncotree_gene_filepath",
@@ -186,6 +187,17 @@ def validate_genes(
         "--input_reference_filepath",
         "-ref",
         help="Path to the supplementary table file with reference OncoTree gene associations",
+    ),
+    llm_model: str = typer.Option(
+        "--model_name",
+        "-model",
+        help="enter the string name of the LLM model to be used",
+    ),
+    temperature: float = typer.Option(
+        ...,
+        "--input_LLM_temperature",
+        "-temp",
+        help="Temperature setting for LLM: value between 0 to 1",
     ),
 ):
     typer.echo(f"Input file path: {input_oncotree_gene_file}")
@@ -210,8 +222,10 @@ def validate_genes(
     pancan_set = set(pancan_gene_list)
     reference_gene_list = []
     validation_results = {}
-    llm_validation = {}
+    #llm_validation = {}
     for item in oncotree_gene:
+        if item not in {"DSRCT"}:
+            continue
         validation_all = {}
         reference_gene_list = pancan_gene_list
         if item in tcgaset["Cancer"].tolist():
@@ -238,9 +252,11 @@ def validate_genes(
                         gene["gene_symbol"],
                         oncotree_gene[item]["cancer_name"],
                         esearch_efetch_output,
+                        llm_model,
+                        temperature,
                     )
                     if llm_response["is_valid"] == "yes":
-                        valid_genes[gene["gene_symbol"]] = "valid"
+                        valid_genes[gene["gene_symbol"]] = f"valid(PMIDs:{esearch_ids})"
                     else:
                         valid_genes[gene["gene_symbol"]] = (
                             f"not valid based on abstracts in PubMed, IDs:{esearch_ids}"
@@ -263,9 +279,11 @@ def validate_genes(
                         pathway_string,
                         oncotree_gene[item]["cancer_name"],
                         esearch_efetch_output,
+                        llm_model,
+                        temperature,
                     )
                     if llm_response["is_valid"] == "yes":
-                        valid_pathways[pathway] = "valid"
+                        valid_pathways[pathway] = f"valid(PMIDs:{esearch_ids})"
                     else:
                         valid_pathways[pathway] = (
                             f"not valid based on abstracts in PubMed, IDs:{esearch_ids}"
@@ -287,26 +305,29 @@ def validate_genes(
                     molecular_subtype,
                     oncotree_gene[item]["cancer_name"],
                     esearch_efetch_output,
+                    llm_model,
+                    temperature,
                 )
                 if llm_response["is_valid"] == "yes":
-                    valid_molecular_subtypes[molecular_subtype] = "valid"
+                    valid_molecular_subtypes[molecular_subtype] = f"valid(PMIDs:{esearch_ids})"
                 else:
                     valid_molecular_subtypes[molecular_subtype] = (
                         f"not valid based on abstracts in PubMed, IDs:{esearch_ids}"
                     )
             llm_response_combined[molecular_subtype] = llm_response
-        llm_validation[item] = llm_response_combined
+        # llm_validation[item] = llm_response_combined
         validation_all["valid_genes"] = valid_genes
         validation_all["valid_pathways"] = valid_pathways
         validation_all["valid_molecular_subtypes"] = valid_molecular_subtypes
+        validation_all["llm_responses"] = llm_response_combined
         validation_results[item] = validation_all
 
     with open(
         "gene_pathway_lists/validate_genes_pathways_in_references.json", "w"
     ) as f:
         json.dump(validation_results, f, indent=2)
-    with open("gene_pathway_lists/llm_validation_responses.json", "w") as file:
-        json.dump(llm_validation, file, indent=2)
+    # with open("gene_pathway_lists/llm_validation_responses.json", "w") as file:
+    # json.dump(llm_validation, file, indent=2)
 
 
 if __name__ == "__main__":
