@@ -1,0 +1,702 @@
+{
+  "MNM": {
+    "valid_genes": {
+      "NPM1": "valid(PMIDs:40779483,40676766,40663075,40663067,40652162)",
+      "FLT3": "valid(PMIDs:40779470,40767405,40718649,40676766,40663075)",
+      "TP53": "valid",
+      "DNMT3A": "valid",
+      "RUNX1": "valid",
+      "ASXL1": "valid",
+      "TET2": "valid(PMIDs:40795827,40693823,40663074,40613161,40613157)",
+      "IDH1": "valid",
+      "IDH2": "valid",
+      "EZH2": "valid(PMIDs:40652162,40613157,40453147,40355175,40306002)",
+      "SF3B1": "valid",
+      "SRSF2": "valid(PMIDs:40795827,40546817,40534376,40526100,40482584)",
+      "U2AF1": "valid",
+      "ZRSR2": "valid(PMIDs:40663074,40546817,40526100,39596583,39504561)",
+      "CBL": "valid(PMIDs:40153132,39938015,39905935,39337700,38865175)",
+      "JAK2": "valid",
+      "MPL": "valid(PMIDs:40579775,40238187,40213168,40164719,39960584)",
+      "CALR": "valid(PMIDs:40844514,40579775,40557150,40315418,40238187)"
+    },
+    "valid_pathways": {
+      "rtk_ras_pi3k_akt_signaling": "valid(PMIDs:37678673,32659083)",
+      "rb_pathway": "not valid based on abstracts in PubMed, IDs:40131169,39923758,39915477,39369272,39259809",
+      "cell_cycle_pathway": "valid(PMIDs:40849278,40801613,40797330,40787830,40784355)",
+      "myc_pathway": "valid(PMIDs:40781078,40619015,40581227,40578608,40508126)",
+      "notch_pathway": "valid(PMIDs:40362596,40355246,40306114,40118975,40075484)",
+      "nrf2_pathway": "valid(PMIDs:40565143,40562318,40482348,40252902,40198133)",
+      "pi3k_pathway": "not valid based on abstracts in PubMed, IDs:40754657,40714917,40670983,40645552,40628732",
+      "rtk_ras_pathway": "valid(PMIDs:38564986,37992684,33972549,31077090,30610028)",
+      "tp53_pathway": "not valid based on abstracts in PubMed, IDs:40730599,40682963,40634759,40581227,40440584",
+      "wnt_pathway": "not valid based on abstracts in PubMed, IDs:40564907,40449363,40349748,40301545,40295061",
+      "cell_cycle_control": "valid(PMIDs:40801613,40753178,40684352,40672953,40650306)",
+      "p53_signaling": "valid(PMIDs:40730599,40682963,40549154,40397797,40366802)",
+      "notch_signaling": "valid(PMIDs:40362596,40355246,40306114,40152115,40118975)",
+      "dna_damage_response": "valid(PMIDs:40796804,40739565,40664443,40633676,40627385)",
+      "other_growth_proliferation_signaling": "valid(PMIDs:40457079,40369076,40366693,40360311,40215944)",
+      "survival_cell_death_regulation_signaling": "valid(PMIDs:40815351,40787830,40786100,40745642,40682067)",
+      "telomere_maintenance": "valid(PMIDs:40179146,40119960,39702351,39700409,39604137)",
+      "rtk_signaling_family": "not valid based on abstracts in PubMed, IDs:37545504,36150062,35636929,33972549,32659083",
+      "pi3k_akt_mtor_signaling": "valid(PMIDs:40754657,40645552,40628732,40449363,40427634)",
+      "ras_raf_mek_erk_jnk_signaling": "valid(PMIDs:39175122,16440327)",
+      "angiogenesis": "valid(PMIDs:40809931,40783386,40670983,40670727,40663210)",
+      "invasion_and_metastasis": "valid(PMIDs:40772466,40655141,40517731,40472922,40131539)",
+      "tgf_\u03b2_pathway": "valid(PMIDs:40815351,40649753,40596746,40409481,40184725)",
+      "regulation_of_ribosomal_protein_synthesis_and_cell_growth": "valid(PMIDs:40790042,40533483,40506561,40381097,40343793)"
+    },
+    "valid_molecular_subtypes": {
+      "Acute Myeloid Leukemia with mutated NPM1": "not valid based on abstracts in PubMed, IDs:40782343,40772501,40676766,40663075,40663067",
+      "Acute Myeloid Leukemia with mutated FLT3-ITD": "valid(PMIDs:40820841,40779470,40746567,40710514,40676766)",
+      "Myelodysplastic Syndrome with mutated SF3B1": "valid(PMIDs:40750227,40693823,40546817,40386435,40273911)",
+      "Chronic Myelomonocytic Leukemia with mutated TET2": "valid(PMIDs:40795827,40727113,40411597,39905935,39752521)",
+      "Myeloproliferative Neoplasm with mutated JAK2": "valid(PMIDs:40790213,40761243,40717686,40681596,40663074)",
+      "Myeloproliferative Neoplasm with mutated CALR": "not valid based on abstracts in PubMed, IDs:40761243,40494174,40376591,40305740,40213168",
+      "Therapy-related Myeloid Neoplasm": "valid(PMIDs:40776581,40772501,40713190,40684772,40596442)",
+      "Myeloid Sarcoma": "valid(PMIDs:40848146,40841513,40841360,40788729,40750233)"
+    },
+    "llm_responses": {
+      "NPM1": {
+        "is_valid": "yes",
+        "explanation": "The text mentions that cup-like blast cells often indicates AML with mutations in the NPM1 gene."
+      },
+      "FLT3": {
+        "is_valid": "yes",
+        "explanation": "Yes, the gene FLT3 is associated with Myeloid Neoplasm, as the text mentions the ZMYM2::FLT3 fusion gene in Myeloid/Lymphoid Neoplasms."
+      },
+      "TET2": {
+        "is_valid": "yes",
+        "explanation": "TET2 mutations are associated with Systemic Mastocytosis with an associated Myeloid Neoplasm (SM-AMN) and Acute Myeloid Leukemia (AML)."
+      },
+      "EZH2": {
+        "is_valid": "yes",
+        "explanation": "The abstract states that EZH2 had higher gene mutation frequency in the poor prognosis group of patients with acute myeloid leukemia (AML)."
+      },
+      "SRSF2": {
+        "is_valid": "yes",
+        "explanation": "The gene SRSF2 is associated with Myeloid Neoplasms, as 77.8% of patients with SETBP1m/GATA2m had SRSF2 co-mutation."
+      },
+      "ZRSR2": {
+        "is_valid": "yes",
+        "explanation": "ZRSR2 is associated with acute myeloid leukemia (AML) in two reported cases, with one case also having mutations in TET2, BRAF, and EZH2."
+      },
+      "CBL": {
+        "is_valid": "yes",
+        "explanation": "The text mentions that CBL mutations were enriched in TET2mut and ASXL1mut AML, indicating an association between CBL and Acute Myeloid Leukemia."
+      },
+      "MPL": {
+        "is_valid": "yes",
+        "explanation": "The gene MPL is essential for the diagnosis of myeloproliferative neoplasms, including essential thrombocythemia and primary myelofibrosis."
+      },
+      "CALR": {
+        "is_valid": "yes",
+        "explanation": "The text mentions that somatic mutations in the CALR gene are traditionally tested in BCR::ABL1-negative myeloproliferative neoplasms (MPNs)."
+      },
+      "rtk_ras_pi3k_akt_signaling": {
+        "is_valid": "yes",
+        "explanation": "The second abstract mentions that FLT3, an RTK, is implicated in acute myeloid leukemia (AML) and highlights FLT3 mediated RAS/MAPK and PI3K/AKT/mTOR signaling."
+      },
+      "rb_pathway": {
+        "is_valid": "no",
+        "explanation": "The provided abstracts do not mention the association between the RB pathway and Myeloid Neoplasm."
+      },
+      "cell_cycle_pathway": {
+        "is_valid": "yes",
+        "explanation": "The first abstract mentions that the TP53 gene regulates cell cycle kinetics and that TP53 mutation is witnessed in myeloid neoplasms."
+      },
+      "myc_pathway": {
+        "is_valid": "yes",
+        "explanation": "The study identifies that the MYC pathway is modulated in acute myeloid leukemia cells."
+      },
+      "notch_pathway": {
+        "is_valid": "yes",
+        "explanation": "The text mentions that DOCK1 expression is associated with upregulated Notch signaling in acute myeloid leukemia (AML), suggesting an association between the Notch pathway and this specific myeloid neoplasm."
+      },
+      "nrf2_pathway": {
+        "is_valid": "yes",
+        "explanation": "The Nrf2 pathway is associated with the cancer type Acute Myeloid Leukemia (AML), where CD84 overexpression stabilizes NRF2 and promotes its transcriptional activation, supporting redox homeostasis and mitochondrial function."
+      },
+      "pi3k_pathway": {
+        "is_valid": "no",
+        "explanation": "The article states that the PI3K/AKT pathway is a key oncogenic driver in Glioblastoma."
+      },
+      "rtk_ras_pathway": {
+        "is_valid": "yes",
+        "explanation": "The text mentions that mutations in RAS/RTK pathway genes are a main driver of acquired resistance to IDH inhibitors in acute myeloid leukemia (AML)."
+      },
+      "tp53_pathway": {
+        "is_valid": "no",
+        "explanation": "The p53 pathway is associated with acute myeloid leukemia (AML), but not myeloid neoplasm, as RPL5 regulates cellular senescence via the p53-p21-pRb pathway in AML."
+      },
+      "wnt_pathway": {
+        "is_valid": "unknown",
+        "explanation": "LLM parsing failed"
+      },
+      "cell_cycle_control": {
+        "is_valid": "yes",
+        "explanation": "The study identifies a PAK6-mediated MDM2/p21 axis that modulates survival and cell cycle control of drug-resistant stem/progenitor cells in Chronic Myeloid Leukemia."
+      },
+      "p53_signaling": {
+        "is_valid": "yes",
+        "explanation": "The first abstract discusses how RPL5 regulates cellular senescence in acute myeloid leukemia (AML) via the p53-p21-pRb pathway."
+      },
+      "notch_signaling": {
+        "is_valid": "yes",
+        "explanation": "The article discusses the association between DOCK1 expression, Notch signaling, and acute myeloid leukemia (AML), indicating that DOCK1 upregulation is linked to increased Notch signaling in AML."
+      },
+      "dna_damage_response": {
+        "is_valid": "yes",
+        "explanation": "Yes, the article with PMID 40633676 discusses how the WWP1-JARID1B axis affects DNA damage repair in acute myeloid leukemia (AML) cells, influencing chemosensitivity."
+      },
+      "other_growth_proliferation_signaling": {
+        "is_valid": "yes",
+        "explanation": "The article discusses how BCR-ABL fusion protein signals to multiple pathways including Ras/MAPK, PI3K/AKT, JAK/STAT and NF-kappaB pathways which promote uncontrolled cell proliferation and survival in Chronic Myeloid Leukemia."
+      },
+      "survival_cell_death_regulation_signaling": {
+        "is_valid": "yes",
+        "explanation": "The text discusses the role of hydroxychloroquine (HCQ) in reversing immune imbalance and suppressing malignant biological characteristics of leukemic cells in acute myeloid leukemia (AML) by regulating cell death."
+      },
+      "telomere_maintenance": {
+        "is_valid": "yes",
+        "explanation": "The text mentions that TBD patients have an increased risk of myeloid neoplasms and that telomere maintenance genes are recurrently somatically altered in TBD patients."
+      },
+      "rtk_signaling_family": {
+        "is_valid": "no",
+        "explanation": "The first abstract mentions that TAM receptors (TYRO3, AXL, and MERTK) are expressed on myeloid cells, but it does not explicitly state an association with Myeloid Neoplasm."
+      },
+      "pi3k_akt_mtor_signaling": {
+        "is_valid": "yes",
+        "explanation": "The PI3K/AKT/mTOR signaling pathway is associated with acute myeloid leukemia (AML), as EAPB02303 anti-leukemic activity was attributed to the inhibition of PI3K/AKT/mTOR signaling activity."
+      },
+      "ras_raf_mek_erk_jnk_signaling": {
+        "is_valid": "yes",
+        "explanation": "The text states that 1alpha,25(OH)(2)D(3)/VDR(nuc) activation of the RAS/RAF/ERK-MAP kinase signalling pathway plays an important role in augmenting STS activity in human myeloid leukaemic cell lines."
+      },
+      "angiogenesis": {
+        "is_valid": "yes",
+        "explanation": "The abstract discusses the prognostic significance of angiogenesis-associated molecules in elderly patients with acute myeloid leukemia (AML), indicating an association between angiogenesis and this specific myeloid neoplasm."
+      },
+      "invasion_and_metastasis": {
+        "is_valid": "yes",
+        "explanation": "The article \"Myeloid cells are involved in tumor immunity, metastasis and metabolism in tumor microenvironment\" discusses the role of myeloid cells in tumor development, invasion, and metastasis."
+      },
+      "tgf_\u03b2_pathway": {
+        "is_valid": "yes",
+        "explanation": "TGF-\u03b2 signaling is strongly correlated with poor prognosis in acute myeloid leukemia (AML) patients and is associated with a quiescence-like phenotype."
+      },
+      "regulation_of_ribosomal_protein_synthesis_and_cell_growth": {
+        "is_valid": "yes",
+        "explanation": "The regulation of ribosomal protein synthesis and cell growth is associated with Myeloid Neoplasm, as DDX41, frequently mutated in myeloid neoplasms, accelerates the transcription of RPL/RPS genes, thereby promoting ribosome biogenesis and protein synthesis."
+      },
+      "Acute Myeloid Leukemia with mutated NPM1": {
+        "is_valid": "no",
+        "explanation": "The first article mentions that FLT3-TKD<sup>mut</sup> AML commonly harbors NPM1 co-mutation, but it does not explicitly state that Acute Myeloid Leukemia with mutated NPM1 is associated with Myeloid Neoplasm."
+      },
+      "Acute Myeloid Leukemia with mutated FLT3-ITD": {
+        "is_valid": "yes",
+        "explanation": "The study explores clinical characteristics of Acute Myeloid Leukemia (AML) patients harboring NPM1/FLT3-ITD/DNMT3A triple mutations, indicating an association between the FLT3-ITD mutated AML subtype and the Myeloid Neoplasm cancer type."
+      },
+      "Myelodysplastic Syndrome with mutated SF3B1": {
+        "is_valid": "yes",
+        "explanation": "The first article mentions donor-derived SF3B1-mutated myelodysplastic syndrome (MDS), which is a type of myeloid neoplasm, arising post-transplant for acute myeloid leukemia."
+      },
+      "Chronic Myelomonocytic Leukemia with mutated TET2": {
+        "is_valid": "yes",
+        "explanation": "The text states that variations including biallelic (double) TET2 or a TET2 mutation combined with an SRSF2 variation identify chronic myelomonocytic leukemia associated with SM, which is a myeloid neoplasm."
+      },
+      "Myeloproliferative Neoplasm with mutated JAK2": {
+        "is_valid": "yes",
+        "explanation": "The first article states that the JAK2-V617F mutation is the most frequent driver mutation in myeloproliferative neoplasms (MPN), which are malignant hematopoietic disorders and therefore a subtype of Myeloid Neoplasm."
+      },
+      "Myeloproliferative Neoplasm with mutated CALR": {
+        "is_valid": "no",
+        "explanation": "The first abstract mentions that myeloproliferative neoplasms (MPNs) are a heterogeneous group of disorders, and presents a case with CALR exon 9 mutation in a patient with MPNs, but it does not explicitly state that Myeloproliferative Neoplasm with mutated CALR is a subtype of Myeloid Neoplasm."
+      },
+      "Therapy-related Myeloid Neoplasm": {
+        "is_valid": "yes",
+        "explanation": "The article by Senapati et al. mentions therapy-related AML as a subtype of AML, which is a type of Myeloid Neoplasm."
+      },
+      "Myeloid Sarcoma": {
+        "is_valid": "yes",
+        "explanation": "The article titled \"Clinical characteristics and outcomes of isolated myeloid sarcoma without bone marrow involvement: An experience from a tertiary cancer care center in India\" mentions that Myeloid Sarcoma is a rare presentation of Acute Myeloid Leukemia (AML), which is a Myeloid Neoplasm."
+      }
+    }
+  },
+  "BRCA": {
+    "valid_genes": {
+      "BRCA1": "valid",
+      "BRCA2": "valid",
+      "ERBB2": "valid",
+      "PIK3CA": "valid",
+      "TP53": "valid",
+      "PALB2": "valid(PMIDs:40778244,40613200,40172573,39930910,39828065)",
+      "PTEN": "valid",
+      "ATM": "valid",
+      "CDH1": "valid",
+      "CHEK2": "valid",
+      "NF1": "valid",
+      "AKT1": "valid",
+      "MAP3K1": "valid",
+      "GATA3": "valid",
+      "RB1": "valid"
+    },
+    "valid_pathways": {
+      "ar_signaling": "valid(PMIDs:40850965,40154811,39162281,39034366,38388422)",
+      "ar_and_steroid_synthesis_enzymes": "not valid based on abstracts in PubMed, IDs:32436149,32209723,30270520,27893717,27848152",
+      "steroid_inactivating_genes": "valid(PMIDs:30337371,15192120,15073846,15010883,8630282)",
+      "down_regulated_by_androgen": "valid(PMIDs:40344383,35168462,35023302,32377705,32366393)",
+      "rtk_ras_pi3k_akt_signaling": "valid(PMIDs:38866361,19860666)",
+      "rb_pathway": "valid(PMIDs:40204112,40038413,39688109,39308687,38678032)",
+      "cell_cycle_pathway": "not valid based on abstracts in PubMed, IDs:40851097,40849803,40830747,40828487,40810169",
+      "hippo_pathway": "valid(PMIDs:40604321,40312366,40055528,39786847,39725264)",
+      "myc_pathway": "valid(PMIDs:40631997,40614544,40595045,40389855,40134825)",
+      "notch_pathway": "valid(PMIDs:40773107,40558481,40517210,40350044,40220043)",
+      "nrf2_pathway": "valid(PMIDs:38982523,37515849,37196541,37195167,36552834)",
+      "pi3k_pathway": "valid(PMIDs:40849803,40773107,40752339,40736250,40711477)",
+      "rtk_ras_pathway": "valid(PMIDs:38866361,36085291,33247676,32391377,32183997)",
+      "tp53_pathway": "valid(PMIDs:40849803,40675394,40629431,40604083,40591167)",
+      "wnt_pathway": "valid(PMIDs:40842081,40773107,40758729,40749681,40708864)",
+      "cell_cycle_control": "valid(PMIDs:40706396,40695783,40652415,40641137,40565136)",
+      "p53_signaling": "valid(PMIDs:40849803,40809847,40792159,40749953,40709397)",
+      "notch_signaling": "not valid based on abstracts in PubMed, IDs:40773107,40558481,40517210,40350044,40220043",
+      "dna_damage_response": "valid(PMIDs:40777006,40760509,40759284,40698682,40641137)",
+      "other_growth_proliferation_signaling": "valid(PMIDs:40709397,40569503,40473183,40388100,40339955)",
+      "survival_cell_death_regulation_signaling": "valid(PMIDs:40842081,40758729,40675394,40594405,40569503)",
+      "telomere_maintenance": "not valid based on abstracts in PubMed, IDs:39287873,39188883,37768037,35992857,33161513",
+      "rtk_signaling_family": "valid(PMIDs:34403827,31218961,30087699,28848113,26635612)",
+      "pi3k_akt_mtor_signaling": "valid(PMIDs:40773107,40752339,40708864,40493117,40481104)",
+      "ras_raf_mek_erk_jnk_signaling": "valid(PMIDs:35978072)",
+      "angiogenesis": "valid(PMIDs:40849803,40841645,40836963,40809847,40730006)",
+      "folate_transport": "not valid based on abstracts in PubMed, IDs:40102896,38561380,38390840,37973392,36402875",
+      "invasion_and_metastasis": "not valid based on abstracts in PubMed, IDs:40830747,40711477,40709187,40708864,40696618",
+      "tgf_\u03b2_pathway": "not valid based on abstracts in PubMed, IDs:40713734,40644310,40629347,40593465,40558481",
+      "regulation_of_ribosomal_protein_synthesis_and_cell_growth": "not valid based on abstracts in PubMed, IDs:40855521,40796898,40671468,40670831,40619273"
+    },
+    "valid_molecular_subtypes": {
+      "Luminal A": "valid(PMIDs:40855304,40848429,40837403,40831385,40828487)",
+      "Luminal B": "valid(PMIDs:40848429,40831385,40690467,40681529,40656955)",
+      "ERBB2-enriched": "valid(PMIDs:32804214,25669979,25277734,24382582)",
+      "Basal-like": "valid(PMIDs:40670829,40629424,40620887,40480318,40456356)",
+      "Claudin-low": "valid(PMIDs:39201647,39110274,38881926,38008756,36707876)",
+      "Normal-like": "valid(PMIDs:40289099,39980051,39110274,38587073,38316663)"
+    },
+    "llm_responses": {
+      "PALB2": {
+        "is_valid": "yes",
+        "explanation": "Yes, the text states that individuals with mutations in PALB2 genes have an increased risk for breast cancer and that germline PVs of PALB2 were evaluated in patients with early-stage breast cancer."
+      },
+      "ar_signaling": {
+        "is_valid": "yes",
+        "explanation": "The text mentions that in hormone-dependent malignancies such as breast cancer, lncRNAs play pivotal roles by modulating hormone signaling pathways and regulating the expression and activity of androgen receptors (AR)."
+      },
+      "ar_and_steroid_synthesis_enzymes": {
+        "is_valid": "no",
+        "explanation": "The study by McNamara et al. (2017) suggests that aromatase expression is associated with androgenic pathways in triple-negative breast cancer and observed androgen-dependent upregulation of aromatase and ER\u03b2 in AR expressing TNBC cell lines."
+      },
+      "steroid_inactivating_genes": {
+        "is_valid": "yes",
+        "explanation": "The fragile genes FHIT and WWOX are inactivated coordinately in invasive breast carcinoma."
+      },
+      "down_regulated_by_androgen": {
+        "is_valid": "yes",
+        "explanation": "Androgen downregulates desmocollin-2 in association with induction of mesenchymal transition of breast MDA-MB-453 cancer cells, which is a luminal androgen receptor (AR) model of triple-negative breast cancer."
+      },
+      "rtk_ras_pi3k_akt_signaling": {
+        "is_valid": "yes",
+        "explanation": "The first article mentions that inhibitors of PI3K, AKT, and mTOR exhibit promising efficacy against Invasive Breast Cancer, suggesting an association between the PI3K/AKT/mTOR pathway and this cancer type, and RTK signaling potentiates GLI activity through PI3K-AKT, suggesting an association between RTK and PI3K-AKT."
+      },
+      "rb_pathway": {
+        "is_valid": "yes",
+        "explanation": "The article mentions that E2F1 and E2F4 induce whereas pRb/RBL2 reduce WNT ligand expression thereby regulating self-renewal, chemoresistance and invasiveness of CSCs in both PDAC and breast cancer."
+      },
+      "cell_cycle_pathway": {
+        "is_valid": "no",
+        "explanation": "The abstract mentions that HSPH1 participates in oncogenic pathways such as the cell cycle in hepatocellular carcinoma, but it does not mention Invasive Breast Carcinoma."
+      },
+      "hippo_pathway": {
+        "is_valid": "yes",
+        "explanation": "The study by Sayedyahossein et al. found a significant positive correlation between PANX1 mRNA and core Hippo components, including YAP, in invasive breast carcinoma."
+      },
+      "myc_pathway": {
+        "is_valid": "yes",
+        "explanation": "The article by Xu et al. confirms that SIAH2-AS1 activates the Wnt/&#x3b2;-catenin pathway and promotes the prognosis of breast cancer."
+      },
+      "notch_pathway": {
+        "is_valid": "yes",
+        "explanation": "The article titled \"RFX5 promotes the progression of triple-negative breast cancer through transcriptional activation of JAG1\" indicates that the Notch pathway is activated in TNBC and RFX5 could activate the Notch pathway via transcriptional activation of JAG1 and promote TNBC progression."
+      },
+      "nrf2_pathway": {
+        "is_valid": "yes",
+        "explanation": "The article mentions that the molecular pathways potentially affected by hydrocarbons include the NRF2 pathway in breast cancer."
+      },
+      "pi3k_pathway": {
+        "is_valid": "yes",
+        "explanation": "The HGF/MET signaling pathway triggers downstream pathways such as PI3K/AKT, which regulate cell proliferation, survival, and epithelial-mesenchymal transition in breast cancer."
+      },
+      "rtk_ras_pathway": {
+        "is_valid": "yes",
+        "explanation": "The text states that MRI-based radiogenomics analysis exhibits excellent performance in predicting genetic pathways alterations, including the RTK/RAS pathway, in invasive breast carcinoma."
+      },
+      "tp53_pathway": {
+        "is_valid": "yes",
+        "explanation": "The study found that ZWINT overexpression co-occurs with truncating mutations in TP53 in breast cancer, suggesting potential functional crosstalk in tumor progression pathways."
+      },
+      "wnt_pathway": {
+        "is_valid": "yes",
+        "explanation": "The article states that Quercetin exhibits multi-modal therapeutic potential in breast cancer through its ability to orchestrate diverse molecular mechanisms, particularly in TNBC, such as targeting the Wnt/\u03b2-catenin pathway."
+      },
+      "cell_cycle_control": {
+        "is_valid": "yes",
+        "explanation": "The text mentions that ethyl acetate extract of Ballota hirsuta Benth (EAB) arrested the cell cycle in the G1 phase and decreased CDK4 activity by 86% in MCF-7 and MDA-MB-231 cell lines, which are breast cancer cell lines."
+      },
+      "p53_signaling": {
+        "is_valid": "yes",
+        "explanation": "WSB2 is found to inhibit p53 expression and the p53 signaling pathway in invasive breast carcinoma cell lines."
+      },
+      "notch_signaling": {
+        "is_valid": "no",
+        "explanation": "The abstract states that resistant models of Triple-Negative Breast Cancer exhibited increased Notch receptor expression, suggesting an association between Notch signaling and this cancer type, but does not mention Invasive Breast Carcinoma."
+      },
+      "dna_damage_response": {
+        "is_valid": "yes",
+        "explanation": "The article mentions that LINC-PINT functions as a tumor suppressor factor in triple-negative breast cancer by promoting apoptosis and senescence, and inhibiting proliferation, migration, invasion, drug resistance, cell stemness, EMT, radioresistance, and DNA damage repair."
+      },
+      "other_growth_proliferation_signaling": {
+        "is_valid": "yes",
+        "explanation": "The article establishes a functional link between ADAMs and activation of mTOR signaling in Triple Negative Breast Cancer, suggesting the ADAM-mTOR axis as a therapeutic target."
+      },
+      "survival_cell_death_regulation_signaling": {
+        "is_valid": "yes",
+        "explanation": "The review states that Daidzin induces apoptosis and cytotoxicity across various cancer cell lines, including breast cancer, and its anticancer efficacy is mediated through modulation of NF-kB, JAK/STAT, and RAS/RAF pathways."
+      },
+      "telomere_maintenance": {
+        "is_valid": "no",
+        "explanation": "The text mentions telomere maintenance associated with breast cancer cells, but does not specify Invasive Breast Carcinoma."
+      },
+      "rtk_signaling_family": {
+        "is_valid": "yes",
+        "explanation": "The article \"Subtyping Of Triple Negative Breast Carcinoma On The Basis Of RTK Expression\" directly associates RTK expression with the subtyping of Triple Negative Breast Carcinoma, a subtype of Invasive Breast Carcinoma."
+      },
+      "pi3k_akt_mtor_signaling": {
+        "is_valid": "yes",
+        "explanation": "The text states that POFUT1 overexpression enhances tumorigenesis by activating the PI3K/AKT/mTOR pathway in breast cancer."
+      },
+      "ras_raf_mek_erk_jnk_signaling": {
+        "is_valid": "yes",
+        "explanation": "The text mentions that RET aberrations co-occur with Ras-Raf-MEK-Erk/JNK signaling and that RET expression was found significantly increased in breast invasive carcinoma (BRCA)."
+      },
+      "angiogenesis": {
+        "is_valid": "yes",
+        "explanation": "The study in the article titled \"Association between VEGF gene polymorphisms and breast cancer risk\" mentions that angiogenesis, driven by vascular endothelial growth factor (VEGF), plays a critical role in the progression and recurrence of breast cancer, and the study revealed that breast cancer in Sudanese women is predominantly invasive ductal carcinoma."
+      },
+      "folate_transport": {
+        "is_valid": "no",
+        "explanation": "The article by Xia, Mingzhi, et al. mentions that miR-10b-5p promotes tumor growth in liver cancer, but it does not mention folate transport or invasive breast carcinoma."
+      },
+      "invasion_and_metastasis": {
+        "is_valid": "no",
+        "explanation": "The first article mentions that POC1A regulates the invasion and metastasis of triple-negative breast cancer (TNBC) in vitro and in vivo."
+      },
+      "tgf_\u03b2_pathway": {
+        "is_valid": "no",
+        "explanation": "The text discusses the transforming growth factor-\u03b2 (TGF\u03b2) pathway's abnormal activation in triple-negative breast cancer (TNBC), but does not mention Invasive Breast Carcinoma."
+      },
+      "regulation_of_ribosomal_protein_synthesis_and_cell_growth": {
+        "is_valid": "no",
+        "explanation": "The study identifies NSUN2 as a critical regulator of triple-negative breast cancer progression through tRNA modification and codon-biased translation."
+      },
+      "Luminal A": {
+        "is_valid": "yes",
+        "explanation": "The abstract states that MCF-7 cell line closely resembles estrogen receptor-positive (ER+), luminal-type breast cancer, which accounts for a significant proportion (~ 70%) of clinical breast cancer cases."
+      },
+      "Luminal B": {
+        "is_valid": "yes",
+        "explanation": "The study found Luminal B tumors in 47.4% of Invasive Breast Carcinoma cases."
+      },
+      "ERBB2-enriched": {
+        "is_valid": "yes",
+        "explanation": "Breast-conserving therapy for triple-negative breast cancer is not associated with increased local recurrence compared with ERBB2-enriched subtype and other non-TNBC subtypes, but TNBC correlates with worse overall survival."
+      },
+      "Basal-like": {
+        "is_valid": "yes",
+        "explanation": "The text mentions that microglandular adenosis can coexist with invasive breast cancer (IBC), particularly the triple-negative (TN) subtype, basal-like invasive breast carcinoma."
+      },
+      "Claudin-low": {
+        "is_valid": "yes",
+        "explanation": "The text states that invasive lobular carcinoma cases without CDH1 alterations exhibited a significantly higher incidence of the Claudin-low subtype."
+      },
+      "Normal-like": {
+        "is_valid": "yes",
+        "explanation": "The study found a higher expression of Fbln2 mRNA in normal-like breast cancers compared to other subgroups."
+      }
+    }
+  },
+  "NSCLC": {
+    "valid_genes": {
+      "EGFR": "valid",
+      "KRAS": "valid",
+      "ALK": "valid",
+      "ROS1": "valid(PMIDs:40826797,40765611,40678598,40661875,40641119)",
+      "BRAF": "valid",
+      "MET": "valid(PMIDs:40856954,40815802,40799244,40765611,40765058)",
+      "NTRK1": "valid(PMIDs:40661875,40637305,40619265,40340691,40328657)",
+      "RET": "valid(PMIDs:40841419,40730881,40676597,40661875,40637305)",
+      "ERBB2": "valid",
+      "TP53": "valid",
+      "STK11": "valid",
+      "KEAP1": "valid",
+      "NFE2L2": "valid",
+      "PIK3CA": "valid",
+      "CD274": "valid(PMIDs:40775266,40755329,40715535,40650126,40649844)",
+      "FGFR1": "valid",
+      "DDR2": "valid(PMIDs:39513224,39319523,37097676,36561283,35709927)",
+      "MAP2K1": "valid"
+    },
+    "valid_pathways": {
+      "rtk_ras_pi3k_akt_signaling": "valid(PMIDs:38866361,37014561,33387041,32897190,26579470)",
+      "rb_pathway": "not valid based on abstracts in PubMed, IDs:40764107,40676597,40389374,40317086,40148314",
+      "cell_cycle_pathway": "valid(PMIDs:40849356,40840233,40836489,40833854,40830660)",
+      "hippo_pathway": "valid(PMIDs:40830878,40826167,40805201,40679672,40180254)",
+      "myc_pathway": "valid(PMIDs:40856954,40721007,40474806,40425041,40278288)",
+      "notch_pathway": "valid(PMIDs:40817125,40534853,40440184,40394734,40374073)",
+      "nrf2_pathway": "valid(PMIDs:40836578,40825842,40760694,40750601,40727921)",
+      "pi3k_pathway": "valid(PMIDs:40856954,40850070,40836578,40833599,40833497)",
+      "rtk_ras_pathway": "valid(PMIDs:40333694,38904222,38866361,38731852,38723776)",
+      "tp53_pathway": "valid(PMIDs:40849356,40798960,40706931,40612688,40611150)",
+      "wnt_pathway": "valid(PMIDs:40838391,40818609,40782856,40777951,40739843)",
+      "cell_cycle_control": "valid(PMIDs:40830660,40772584,40759817,40747695,40738980)",
+      "p53_signaling": "valid(PMIDs:40850070,40849356,40805201,40796706,40721007)",
+      "notch_signaling": "valid(PMIDs:40817125,40699376,40595495,40534853,40500731)",
+      "dna_damage_response": "valid(PMIDs:40849356,40808963,40805201,40792148,40768802)",
+      "other_growth_proliferation_signaling": "valid(PMIDs:40659239,40632111,40617805,40546658,40533520)",
+      "survival_cell_death_regulation_signaling": "valid(PMIDs:40719479,40713002,40700931,40682067,40659239)",
+      "telomere_maintenance": "valid(PMIDs:39297884,38799568,38431575,38086789,37718447)",
+      "rtk_signaling_family": "valid(PMIDs:40468087,40301162,40194950,39089636,38496685)",
+      "pi3k_akt_mtor_signaling": "valid(PMIDs:40752339,40734684,40706246,40638942,40538534)",
+      "ras_raf_mek_erk_jnk_signaling": "valid(PMIDs:35978072)",
+      "angiogenesis": "valid(PMIDs:40843765,40838233,40835442,40801328,40785621)",
+      "folate_transport": "valid(PMIDs:40270992,39261014,38256120,37244363,36615660)",
+      "invasion_and_metastasis": "valid(PMIDs:40856954,40787208,40740874,40721857,40700931)",
+      "tgf_\u03b2_pathway": "valid(PMIDs:40853904,40806251,40805201,40746719,40656546)",
+      "regulation_of_ribosomal_protein_synthesis_and_cell_growth": "not valid based on abstracts in PubMed, IDs:40734684,40664016,40645461,40619404,40571215"
+    },
+    "valid_molecular_subtypes": {
+      "Adenocarcinoma": "valid(PMIDs:40856954,40856795,40854723,40852483,40849356)",
+      "Squamous cell carcinoma": "not valid based on abstracts in PubMed, IDs:40847660,40843762,40841419,40836888,40831990",
+      "Large cell carcinoma": "not valid based on abstracts in PubMed, IDs:40853762,40847233,40843765,40841419,40832222",
+      "KRAS-mutant": "valid(PMIDs:40814365,40809430,40809235,40799453,40729433)",
+      "EGFR-mutant": "valid(PMIDs:40855785,40855276,40853210,40842074,40836051)",
+      "ALK-rearranged": "valid(PMIDs:40809430,40799417,40760193,40684707,40673075)",
+      "ROS1-rearranged": "valid(PMIDs:40744632,40535089,40336761,40154161,40142301)",
+      "BRAF-mutant": "valid(PMIDs:40813186,30571050,40242250,39625633,39545749)",
+      "MET exon 14 skipping": "valid(PMIDs:40815802,40799414,40738075,40716572,40710887)",
+      "NTRK-fusion positive": "valid(PMIDs:40616734,38953725,38866255,38376315,38171156)",
+      "RET-rearranged": "valid(PMIDs:40458063,40405293,40171987,40123940,39980615)",
+      "HER2-mutant/amplified": "not valid based on abstracts in PubMed, IDs:",
+      "PD-L1 high": "not valid based on abstracts in PubMed, IDs:40842587,40832222,40831930,40831287,40826400",
+      "STK11/LKB1-mutant": "valid(PMIDs:38953310,35165542)",
+      "KEAP1-mutant": "valid(PMIDs:40128173,39243945,38980931,38877143,38849167)",
+      "NFE2L2-mutant": "valid(PMIDs:34381706,33307193,33071215)",
+      "PIK3CA-mutant": "valid(PMIDs:40509897,40328748,39743996,39282132,38183801)"
+    },
+    "llm_responses": {
+      "ROS1": {
+        "is_valid": "yes",
+        "explanation": "Yes, the abstract mentions that ROS1 is associated with Non-Small Cell Lung Cancer and that ROS1-tyrosine kinase inhibitors have shown efficacy against NSCLC with common ROS1 fusion genes."
+      },
+      "MET": {
+        "is_valid": "yes",
+        "explanation": "The gene MET is associated with Non-Small Cell Lung Cancer, where MET alterations showed the shortest progression-free survival in EGFR-mutant NSCLC patients, and MET amplification leads to gefitinib resistance in lung cancer."
+      },
+      "NTRK1": {
+        "is_valid": "yes",
+        "explanation": "Yes, the gene NTRK1 is associated with Non-Small Cell Lung Cancer, as NTRK1/2/3 rearrangements were detected in NSCLC samples using the ChromaCode NSCLC assay."
+      },
+      "RET": {
+        "is_valid": "yes",
+        "explanation": "Yes, the study identified that 84.2% of advanced/metastatic NSCLC patients were evaluated with an NGS panel including RET rearrangements, and actionable aberrations were identified in 45.5% of the patients."
+      },
+      "CD274": {
+        "is_valid": "yes",
+        "explanation": "CD274, also known as PD-L1, is associated with Non-Small Cell Lung Cancer, where its expression is investigated for predictive and prognostic value in immunotherapy."
+      },
+      "DDR2": {
+        "is_valid": "yes",
+        "explanation": "Yes, the gene DDR2 is associated with Non-Small Cell Lung Cancer, as genetic variants in DDR2 are associated with NSCLC survival."
+      },
+      "rtk_ras_pi3k_akt_signaling": {
+        "is_valid": "yes",
+        "explanation": "The article states that numerous significant signaling pathways, including the RTK/RAS/MAP-Kinase pathway and PI3K/Akt signaling, have been discovered as commonly genetically changed in non-small-cell lung cancer."
+      },
+      "rb_pathway": {
+        "is_valid": "no",
+        "explanation": "The article mentions H1299 non-small cell lung cancer (NSCLC) cells were used to test changes in the PI3K/AKT signaling pathway in response to Tumor Treating Fields (TTFields)."
+      },
+      "cell_cycle_pathway": {
+        "is_valid": "yes",
+        "explanation": "The article mentions alterations in cell cycle regulation in NSCLC tumors, indicating an association between the cell cycle pathway and Non-Small Cell Lung Cancer."
+      },
+      "hippo_pathway": {
+        "is_valid": "yes",
+        "explanation": "Yes, the Hippo pathway is associated with Non-Small Cell Lung Cancer, as the first article reviews the Hippo signalling pathway's role in the progression and treatment of NSCLC."
+      },
+      "myc_pathway": {
+        "is_valid": "yes",
+        "explanation": "Dihydroartemisinin inhibits NSCLC by targeting MDM2/c-Myc axis independent of p53."
+      },
+      "notch_pathway": {
+        "is_valid": "yes",
+        "explanation": "The role of Notch signaling varies between cancers; in non-small cell lung cancer, Notch1 and Notch2 exhibit opposing effects compared to their roles in embryonal brain tumors."
+      },
+      "nrf2_pathway": {
+        "is_valid": "yes",
+        "explanation": "Yes, the Nrf2 pathway is associated with Non-Small Cell Lung Cancer, as tanshinol contributes to the reduction of intracellular reactive oxygen species via modulation of the Nrf2/HO-1 antioxidative pathway in NSCLC cells."
+      },
+      "pi3k_pathway": {
+        "is_valid": "yes",
+        "explanation": "Yes, QFM was effective in treating NSCLC via the PI3K-Akt/p53 signaling pathway."
+      },
+      "rtk_ras_pathway": {
+        "is_valid": "yes",
+        "explanation": "The high number of alterations in the RTK-RAS pathway suggests that it plays an important role in the evolution of Pleomorphic Carcinoma, an aggressive and highly heterogeneous NSCLC."
+      },
+      "tp53_pathway": {
+        "is_valid": "yes",
+        "explanation": "The abstract mentions that NSCLCs often carry alterations in tumor suppressor genes like TP53."
+      },
+      "wnt_pathway": {
+        "is_valid": "yes",
+        "explanation": "The abstracts indicate that the Wnt pathway is associated with Non-Small Cell Lung Cancer, influencing its progression and drug resistance."
+      },
+      "cell_cycle_control": {
+        "is_valid": "yes",
+        "explanation": "This study shows that bovine lactoferrin induces S-phase cell cycle arrest in NSCLC cells."
+      },
+      "p53_signaling": {
+        "is_valid": "yes",
+        "explanation": "The first abstract indicates that QFM was effective in treating NSCLC via the PI3K-Akt/p53 signaling pathway, while the third abstract mentions that functional enrichment analyses revealed critical pathways, including p53 signaling, underlying resistance mechanisms in NSCLC."
+      },
+      "notch_signaling": {
+        "is_valid": "yes",
+        "explanation": "The study in the abstract titled \"Serum extracellular vesicle microRNAs as potential biomarkers to predict pembrolizumab response and prognosis in metastatic non-small cell lung cancer patients\" mentions that microRNAs found in serum extracellular vesicles are involved in the NOTCH pathway in NSCLC."
+      },
+      "dna_damage_response": {
+        "is_valid": "yes",
+        "explanation": "Daphnane diterpenoids suppress ATR-mediated DNA damage response in Non-Small Cell Lung Cancer cells, suggesting a potential therapeutic avenue."
+      },
+      "other_growth_proliferation_signaling": {
+        "is_valid": "yes",
+        "explanation": "Yes, blocking TIP1 in Non-Small Cell Lung Cancer upregulates Midkine via the beta-catenin/Wnt signaling pathway."
+      },
+      "survival_cell_death_regulation_signaling": {
+        "is_valid": "yes",
+        "explanation": "Yes, hsa_circ_0001640 inactivates the PI3K/AKT signaling pathway by targeting the MiR-942-5p/PTEN axis to inhibit the progression of non-small cell lung cancer."
+      },
+      "telomere_maintenance": {
+        "is_valid": "yes",
+        "explanation": "Telomere maintenance via telomerase reactivation is linked to uncontrolled cell growth in non-small cell lung cancer, making it a therapeutic target."
+      },
+      "rtk_signaling_family": {
+        "is_valid": "yes",
+        "explanation": "The first article mentions that the GSEA results indicated that the RTK-PI3K signaling pathway is enriched in the connection between circulating inflammatory cytokines and NSCLC."
+      },
+      "pi3k_akt_mtor_signaling": {
+        "is_valid": "yes",
+        "explanation": "The abstracts indicate that the PI3K/AKT/mTOR signaling pathway is associated with Non-Small Cell Lung Cancer (NSCLC)."
+      },
+      "ras_raf_mek_erk_jnk_signaling": {
+        "is_valid": "yes",
+        "explanation": "The abstract mentions that Ras-Raf-MEK-Erk/JNK signaling co-occurs with RET alterations, and RET inhibitors are used in non-small cell lung cancer (NSCLC)."
+      },
+      "angiogenesis": {
+        "is_valid": "yes",
+        "explanation": "The article discusses combining anti-angiogenesis approaches with immune checkpoint inhibitors for the treatment of advanced non-small cell lung cancer (NSCLC)."
+      },
+      "folate_transport": {
+        "is_valid": "yes",
+        "explanation": "Yes, the folate transport is associated with Non-Small Cell Lung Cancer as RFC and PCFT are important for antifolates accumulation in NSCLC cells."
+      },
+      "invasion_and_metastasis": {
+        "is_valid": "yes",
+        "explanation": "Yes, the abstract states that OH2 inhibits migration and invasion of NSCLC by downregulating \u03b2-catenin."
+      },
+      "tgf_\u03b2_pathway": {
+        "is_valid": "yes",
+        "explanation": "The article \"Eurycomanone Blocks TGF-&#x3b2;1-Induced Epithelial-to-Mesenchymal Transition, Migration, and Invasion Pathways in Human Non-Small Cell Lung Cancer Cells by Targeting Smad and Non-Smad Signaling\" directly associates the TGF-&#x3b2; pathway with Non-Small Cell Lung Cancer."
+      },
+      "regulation_of_ribosomal_protein_synthesis_and_cell_growth": {
+        "is_valid": "no",
+        "explanation": "The provided text does not mention the regulation of ribosomal protein synthesis and cell growth in association with Non-Small Cell Lung Cancer, but it does mention that Xingxiao Pill suppressed the progression of Non-Small Cell Lung Cancer by targeting SREBP1/FASN-Induced Fatty Acid Biosynthesis via PI3K/AKT/mTOR Signaling Pathway."
+      },
+      "Adenocarcinoma": {
+        "is_valid": "yes",
+        "explanation": "The abstract mentions that some Non-Small Cell Lung Cancers (NSCLC), particularly adenocarcinomas, harbor genomic alterations."
+      },
+      "Squamous cell carcinoma": {
+        "is_valid": "no",
+        "explanation": "The article discusses PROX1 expression in NSCLC, specifically adenocarcinoma and squamous cell carcinoma subtypes, but does not mention any specific molecular subtype of squamous cell carcinoma."
+      },
+      "Large cell carcinoma": {
+        "is_valid": "no",
+        "explanation": "The provided text does not mention the association between Large cell carcinoma molecular subtype and Non-Small Cell Lung Cancer."
+      },
+      "KRAS-mutant": {
+        "is_valid": "yes",
+        "explanation": "The study investigates clinicopathologic features of KRAS mutant metastatic non-small cell lung cancer (NSCLC) patients and the clinical, prognostic and survival differences between KRAS subtypes."
+      },
+      "EGFR-mutant": {
+        "is_valid": "yes",
+        "explanation": "The text mentions that EGFR-mutant is associated with Non-Small Cell Lung Cancer (NSCLC)."
+      },
+      "ALK-rearranged": {
+        "is_valid": "yes",
+        "explanation": "ALK-rearranged non-small cell lung cancer (NSCLC) is mentioned, indicating an association between the ALK-rearranged molecular subtype and Non-Small Cell Lung Cancer."
+      },
+      "ROS1-rearranged": {
+        "is_valid": "yes",
+        "explanation": "Yes, ROS1-rearranged lung cancer is a rare molecular subtype of non-small cell lung cancer."
+      },
+      "BRAF-mutant": {
+        "is_valid": "yes",
+        "explanation": "The abstract states that BRAF mutations are significantly gathering more attention due to their impact on disease progression and therapeutic response in Non-Small Cell Lung Cancer (NSCLC)."
+      },
+      "MET exon 14 skipping": {
+        "is_valid": "yes",
+        "explanation": "The article states that capmatinib and tepotinib demonstrate extraordinary efficacy for patients with Non-Small Cell Lung Cancer and MET exon 14 skipping mutation."
+      },
+      "NTRK-fusion positive": {
+        "is_valid": "yes",
+        "explanation": "NTRK fusions are present in approximately 0.2% of non-small cell lung cancer (NSCLC) cases, and entrectinib has demonstrated efficacy in patients with NTRK fusion-positive NSCLC."
+      },
+      "RET-rearranged": {
+        "is_valid": "yes",
+        "explanation": "The abstracts confirm that the RET-rearranged molecular subtype is associated with Non-Small Cell Lung Cancer."
+      },
+      "HER2-mutant/amplified": {
+        "is_valid": "no",
+        "explanation": "The provided text is empty and does not contain any information about HER2-mutant/amplified molecular subtype association with Non-Small Cell Lung Cancer."
+      },
+      "PD-L1 high": {
+        "is_valid": "no",
+        "explanation": "The provided text does not mention the association between the PD-L1 high molecular subtype and Non-Small Cell Lung Cancer."
+      },
+      "STK11/LKB1-mutant": {
+        "is_valid": "yes",
+        "explanation": "The abstract states that abnormalities in the STK11/LKB1 gene have been shown to induce lung adenocarcinoma, a subtype of Non-Small Cell Lung Cancer."
+      },
+      "KEAP1-mutant": {
+        "is_valid": "yes",
+        "explanation": "Yes, the KEAP1-mutant molecular subtype is associated with Non-Small Cell Lung Cancer, as the abstract mentions OS benefit with T+D+CT versus CT remained evident in KEAP1-mutant mNSCLC."
+      },
+      "NFE2L2-mutant": {
+        "is_valid": "yes",
+        "explanation": "Mutations in KEAP1 and NFE2L2 are predictive of high rates of local recurrence after radiotherapy but not surgery in patients with Non-Small Cell Lung Cancer."
+      },
+      "PIK3CA-mutant": {
+        "is_valid": "yes",
+        "explanation": "The PIK3CA-mutant molecular subtype is associated with Non-Small Cell Lung Cancer, as evidenced by multiple studies focusing on this relationship and potential therapeutic strategies."
+      }
+    }
+  }
+}
