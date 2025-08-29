@@ -5,9 +5,9 @@
 
 - [Description](#description)
 
--- [Background](#background)
+ - [Background](#background)
 
--- [Project overview](#project-overview)
+ - [Project overview](#project-overview)
 
 
 
