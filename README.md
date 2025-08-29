@@ -5,11 +5,16 @@
 
 - [Description](#description)
 
+-- [Background](#background)
+
+-- [Project overview](#project-overview)
+
+
 
 
 
 ## Description
-Background:
+### Background:
 cBioPortal for Cancer Genomics: An open-source platform that enables interactive exploration and visualization of large-scale cancer genomics datasets.[1,2]
 
 Cancer Classification: Accurate classification of cancer subtypes is essential for diagnosis, prognosis, and treatment. OncoTree provides a standardized, community-driven ontology for cancer subtypes.[3]
@@ -17,7 +22,7 @@ Cancer Classification: Accurate classification of cancer subtypes is essential f
 OncoTree Integration in cBioPortal: cBioPortal uses OncoTree codes to categorize cancer samples. However, it lacks default gene/pathway recommendations per cancer type, which could enhance data exploration.
 
 
-Project overview:
+### Project overview:
 This project, developed as part of Google Summer of Code 2025, aims to enhance the cBioPortal platform by generating a list of recommended default genes and pathways for each OncoTree code. To achieve this goal, we use prompt engineering to query a Large Language Model (LLM) for structured lists of genes, pathways, and molecular subtypes associated with each OncoTree code, as shown here for the OncoTree code 'PAAD' (Pancreatic Adenocarcinoma):
 
 ```yaml
