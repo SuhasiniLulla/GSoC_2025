@@ -4,8 +4,8 @@
 ## Table of Contents
 
 - [Description](#description)
- - [Background](#background)
- - [Project overview](#project-overview)
+  - [Background](#background)
+  - [Project overview](#project-overview)
 
 
 
