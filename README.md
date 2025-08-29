@@ -11,7 +11,106 @@ OncoTree Integration in cBioPortal: cBioPortal uses OncoTree codes to categorize
 
 
 Project overview:
-This project, developed as part of Google Summer of Code 2025, aims to enhance the cBioPortal platform by generating a list of recommended default genes and pathways for each OncoTree code. To achieve this goal, we use prompt engineering to query a Large Language Model (LLM) for structured lists of genes, pathways, and molecular subtypes associated with each OncoTree code. Output valid gene, pathway, and molecular subtype sets will be used by cBioPortal to improve visualzation of datasets on the web tool. For example, valid genes will be displayed before other mutated genes in patient and study summary view tabs as illustrated below:
+This project, developed as part of Google Summer of Code 2025, aims to enhance the cBioPortal platform by generating a list of recommended default genes and pathways for each OncoTree code. To achieve this goal, we use prompt engineering to query a Large Language Model (LLM) for structured lists of genes, pathways, and molecular subtypes associated with each OncoTree code, as shown here for the OncoTree code 'PAAD' (Pancreatic Adenocarcinoma):
+
+```
+{
+  "PAAD": {
+    "cancer_name": "Pancreatic Adenocarcinoma",
+    "other_codes_used_for_data_gathering": {
+      "NCIt": "C8294",
+      "UMLS": "C0281361"
+    },
+    "associated_genes": [
+      {
+        "gene_symbol": "KRAS",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID:31582729|PMID:29625052|cBioPortal",
+          "mutations": [
+            "missense",
+            "deletion",
+            "insertion"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: Missense mutations in KRAS are associated with PAAD and used for diagnosis.",
+          "therapeutic_relevance": "clinical trials such as NCT07020221 are actively testing inhibitors of the actionable missense mutation KRAS G12D which is frequent in PAAD. KRAS mutations are generally considered a negative predictive marker for EGFR inhibitors."
+        }
+      },
+      {
+        "gene_symbol": "TP53",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID:31582729|PMID:28726843|cBioPortal",
+          "mutations": [
+            "truncating",
+            "missense",
+            "deletion"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: Inactivation mutations in TP53 are associated with PAAD and can be used for diagnosis.",
+          "therapeutic_relevance": "TP53 mutations can affect response to chemotherapy and radiation therapy."
+        }
+      },
+      {
+        "gene_symbol": "CDKN2A",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID:31582729|PMID:22522928|cBioPortal",
+          "mutations": [
+            "truncating",
+            "deletion",
+            "methylation"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "diagnostic: Inactivation mutations in CDKN2A are associated with PAAD and can be used for diagnosis.",
+          "therapeutic_relevance": "CDKN2A loss can lead to cell cycle dysregulation and may influence response to CDK4/6 inhibitors."
+        }
+      },..............
+...........],
+    "molecular_subtypes": [
+      "Squamous",
+      "Pancreatic Progenitor",
+      "Immunogenic",
+      "Aberrantly Differentiated Endocrine Exocrine (ADEX)"
+    ],
+    "associated_pathways": {
+      "ar_signaling": "no",
+      "ar_and_steroid_synthesis_enzymes": "no",
+      "steroid_inactivating_genes": "no",
+      "down_regulated_by_androgen": "no",
+      "rtk_ras_pi3k_akt_signaling": "yes",
+      "rb_pathway": "yes",
+      "cell_cycle_pathway": "yes",
+      "hippo_pathway": "yes",
+      "myc_pathway": "yes",
+      "notch_pathway": "yes",
+      "nrf2_pathway": "yes",
+      "pi3k_pathway": "yes",
+      "rtk_ras_pathway": "yes",
+      "tp53_pathway": "yes",
+      "wnt_pathway": "yes",
+      "cell_cycle_control": "yes",
+      "p53_signaling": "yes",
+      "notch_signaling": "yes",
+      "dna_damage_response": "yes",
+      "other_growth_proliferation_signaling": "yes",
+      "survival_cell_death_regulation_signaling": "yes",
+      "telomere_maintenance": "yes",
+      "rtk_signaling_family": "yes",
+      "pi3k_akt_mtor_signaling": "yes",
+      "ras_raf_mek_erk_jnk_signaling": "yes",
+      "angiogenesis": "yes",
+      "folate_transport": "yes",
+      "invasion_and_metastasis": "yes",
+      "tgf_\u03b2_pathway": "yes",
+      "oncogenes_associated_with_epithelial_ovarian_cancer": "no",
+      "regulation_of_ribosomal_protein_synthesis_and_cell_growth": "yes"
+    }
+  }
+```
+
+Output valid gene, pathway, and molecular subtype sets will be used by cBioPortal to improve visualzation of datasets on the web tool. For example, valid genes will be displayed before other mutated genes in patient and study summary view tabs as illustrated below:
 
 <img width="662" height="431" alt="Screenshot 2025-08-21 at 7 27 11 PM" src="https://github.com/user-attachments/assets/ea39cdee-1d60-4510-8e67-86093ed8bd35" />
 
