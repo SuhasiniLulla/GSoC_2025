@@ -1,3 +1,4 @@
+
 import json
 import os
 from pathlib import Path
@@ -9,10 +10,10 @@ from dotenv import load_dotenv
 from google.generativeai.types import GenerationConfig
 from pydantic import BaseModel, ConfigDict, Field
 
+
 load_dotenv()
 YOUR_API_KEY = os.getenv("LLM_API_KEY")
 genai.configure(api_key=YOUR_API_KEY)
-
 
 class CodeReferences(BaseModel):
     NCIt: str
@@ -69,9 +70,11 @@ class AssociatedGene(BaseModel):
     gene_info: GeneInfo
 
 
+
 class GenerateLists(BaseModel):
     cancer_name: str
     other_codes_used_for_data_gathering: CodeReferences
+
     associated_genes: List[AssociatedGene] = Field(
         ..., description="List of gene symbols and their associated data"
     )
@@ -129,6 +132,7 @@ print("Generated Schema:\n", json.dumps(schema_json, indent=2))
 PROMPT_TEMPLATE = """You are an expert in clinical cancer genetics, specifically in gene-disease and pathway-disease curations (for hereditary and sporadic cancers). Based on scientific literature in PubMed, current genetic testing practices in oncology clinics, gene-disease association curations in ClinGen, OMIM, GeneReviews, and similar expert or peer reviewed resoursces, and public tumor sequencing databases such as cBioPortal, and COSMIC, list the genes and pathways, mutations in which are associated with {cancer_name} ({oncotree_code}). Different ontologies have different terms/codes to depict the same cancer sub-type. {oncotree_code} is the OncoTree code that is the same as {ncit_code} (NCIt) and {umls_code} (UMLS). Use these codes to gather as much literature/data as possible to provide a comprehensive list of genes and pathways in JSON structured format. The associated gene list should be ranked by strength and likelihood of association such that the first gene in the list has the strongest association with the cancer type and the last gene in the list has the weakest association with the cancer type. The gene list should be of high quality, accurate, and should not exceed 50 in count. The JSON should have top-level keys: "oncotree_code", "cancer_name" (full name of the code), "other_codes_used_for_data_gathering" (dictionary with keys NCIt and UMLS), "associated_genes" (a list of dictionaries - one dictionary for every associated gene, having top level keys of 'gene_symbol' and 'gene_info'. 'gene_symbol' should be only 1 gene per key. 'gene_info' is a dictionary with keys and values formatted as follows: 1. 'association_strength', value: classified as 'very strong', 'strong', 'moderate', 'weak', or 'very weak' association of this particular gene and cancer type depending on the quality and quantity of resources used to associate the gene and cancer type, 2. 'reference', value: resource(s) used to infer the gene-cancer type association (if multiple citations, then separate instances by '|'), 3. 'mutations', value: list of types of mutations in the gene that is associated with the given cancer type (such as truncating, splice, missense gain of function, missense-loss of function, missense-neomorphic, missense-hypo-/hyper-morphic, deletion, duplication, fusion, copy number variant, structural variant, complex rearrangements, methylation, and so on relevant to the gene-cancer type association), 4. 'mutation_origin', value: MUST be either "germline/somatic" OR "somatic" where 'germline/somatic' indicates that the cancer mutation in this gene can be present in the germline as cancer predisposing or arise somatically over time (so includes both 'germline' and 'somatic' options in 1 category only), 'somatic' indicates that the cancer mutation in this gene is only of somatic origin and not seen in the germline, 5. 'diagnostic_implication', value: clinical implication of the gene as to whether it is used to diagnose the cancer type, for example, the gene KRAS is associated with PAAD: 'diagnostic: missense mutations in KRAS are associated with PAAD and used for diagnosis.' Limit to 1 sentence, 6. 'therapeutic_relevance', value: if gene mutation informs decision making for therapeutic strategy, for example, for the association of KRAS and PAAD, 'clinical trials such as NCT07020221 are actively testing inhibitors of the actionable missense mutation KRAS G12D which is frequent in PAAD. Effect on immunotherapy is ....'), "molecular_subtypes", values: This should be a list of expression-based, genomic, or histological molecular subtypes known to occur in {cancer_name}. These subtypes should be informative for clinical decision-making, such as guiding treatment selection or predicting prognosis. Please use descriptive names or standard nomenclature for the subtypes, and prioritize those with known clinical implications, and "associated_pathways" (a dictionary with keys being each pathway name in the list: ['ar_signaling', 'ar_and_steroid_synthesis_enzymes', 'steroid_inactivating_genes', 'down_regulated_by_androgen', 'rtk_ras_pi3k_akt_signaling', 'rb_pathway', 'cell_cycle_pathway', 'hippo_pathway', 'myc_pathway', 'notch_pathway', 'nrf2_pathway', 'pi3k_pathway', 'rtk_ras_pathway', 'tp53_pathway', 'wnt_pathway', 'cell_cycle_control', 'p53_signaling', 'notch_signaling', 'dna_damage_response', 'other_growth_proliferation_signaling', 'survival_cell_death_regulation_signaling', 'telomere_maintenance', 'rtk_signaling_family', 'pi3k_akt_mtor_signaling', 'ras_raf_mek_erk_jnk_signaling', 'angiogenesis', 'folate_transport', 'invasion_and_metastasis', 'tgf_β_pathway', 'oncogenes_associated_with_epithelial_ovarian_cancer', 'regulation_of_ribosomal_protein_synthesis_and_cell_growth'] and the value being 'yes' if associated with cancer sub-type or 'no' if pathway not associated with cancer sub-type)."""
 
 
+
 app = typer.Typer()
 
 
@@ -165,6 +169,7 @@ def generate_lists(
     oncotree_codes_info = {}
 
     for item in oncotree:
+
         if item["code"] not in {"COAD", "NSCLC", "PAAD", "DSRCT", "BRCA", "MNM"}:
             continue
         code = item["code"]
@@ -196,9 +201,11 @@ def generate_lists(
 
     all_results = {}  # A dictionary to store all the AI's answers
 
+
     for oncotree_code, details in oncotree_codes_info.items():
         # Fill in the placeholders in the prompt template
         current_prompt = PROMPT_TEMPLATE.format(
+
             cancer_name=details["name"],
             oncotree_code=oncotree_code,
             ncit_code=details["NCIt"],
@@ -210,12 +217,14 @@ def generate_lists(
             response = model.generate_content(current_prompt)
             # json_output_str = response.text
 
+
             # Convert the JSON string into a Python dictionary
             parsed_json_data_dict = json.loads(response.text)
             parsed_model = GenerateLists(**parsed_json_data_dict)
 
             # Store the structured data
             all_results[oncotree_code] = parsed_model.model_dump()
+
 
         except Exception as e:
             print(f"  Error processing {oncotree_code}: {e}")
@@ -234,9 +243,11 @@ def generate_lists(
                     print(
                         f"    Safety Ratings: {response.candidates[0].safety_ratings}"
                     )
+
             all_results[oncotree_code] = {"error": str(e), "details_provided": details}
 
     print(all_results)
+
 
     with open(output_lists, "w") as f:
         json.dump(all_results, f, indent=2)
@@ -244,3 +255,4 @@ def generate_lists(
 
 if __name__ == "__main__":
     app()
+
