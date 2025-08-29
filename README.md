@@ -15,70 +15,77 @@ This project, developed as part of Google Summer of Code 2025, aims to enhance t
 
 ```
 {
-  "PAAD": {
-    "cancer_name": "Pancreatic Adenocarcinoma",
+ "BRCA": {
+    "cancer_name": "Invasive Breast Carcinoma",
     "other_codes_used_for_data_gathering": {
-      "NCIt": "C8294",
-      "UMLS": "C0281361"
+      "NCIt": "C9245",
+      "UMLS": "C0853879"
     },
     "associated_genes": [
       {
-        "gene_symbol": "KRAS",
+        "gene_symbol": "BRCA1",
         "gene_info": {
           "association_strength": "very strong",
-          "reference": "PMID:31582729|PMID:29625052|cBioPortal",
+          "reference": "PMID: 12826630|PMID: 10799637|ClinVar",
           "mutations": [
-            "missense",
-            "deletion",
-            "insertion"
-          ],
-          "mutation_origin": "somatic",
-          "diagnostic_implication": "diagnostic: Missense mutations in KRAS are associated with PAAD and used for diagnosis.",
-          "therapeutic_relevance": "clinical trials such as NCT07020221 are actively testing inhibitors of the actionable missense mutation KRAS G12D which is frequent in PAAD. KRAS mutations are generally considered a negative predictive marker for EGFR inhibitors."
-        }
-      },
-      {
-        "gene_symbol": "TP53",
-        "gene_info": {
-          "association_strength": "very strong",
-          "reference": "PMID:31582729|PMID:28726843|cBioPortal",
-          "mutations": [
-            "truncating",
-            "missense",
-            "deletion"
-          ],
-          "mutation_origin": "somatic",
-          "diagnostic_implication": "diagnostic: Inactivation mutations in TP53 are associated with PAAD and can be used for diagnosis.",
-          "therapeutic_relevance": "TP53 mutations can affect response to chemotherapy and radiation therapy."
-        }
-      },
-      {
-        "gene_symbol": "CDKN2A",
-        "gene_info": {
-          "association_strength": "very strong",
-          "reference": "PMID:31582729|PMID:22522928|cBioPortal",
-          "mutations": [
-            "truncating",
-            "deletion",
-            "methylation"
+            "Truncating",
+            "Splice site",
+            "Missense",
+            "Deletion",
+            "Duplication",
+            "Frameshift"
           ],
           "mutation_origin": "germline/somatic",
-          "diagnostic_implication": "diagnostic: Inactivation mutations in CDKN2A are associated with PAAD and can be used for diagnosis.",
-          "therapeutic_relevance": "CDKN2A loss can lead to cell cycle dysregulation and may influence response to CDK4/6 inhibitors."
+          "diagnostic_implication": "Germline mutations in BRCA1/2 are used for risk assessment and diagnosis of hereditary breast cancer.",
+          "therapeutic_relevance": "PARP inhibitors are effective in BRCA1/2-mutated breast cancers. Platinum-based chemotherapy can also be considered."
         }
-      },..............
-...........],
+      },
+      {
+        "gene_symbol": "BRCA2",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 8259976|ClinVar",
+          "mutations": [
+            "Truncating",
+            "Splice site",
+            "Missense",
+            "Deletion",
+            "Duplication",
+            "Frameshift"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "Germline mutations in BRCA1/2 are used for risk assessment and diagnosis of hereditary breast cancer.",
+          "therapeutic_relevance": "PARP inhibitors are effective in BRCA1/2-mutated breast cancers. Platinum-based chemotherapy can also be considered."
+        }
+      },
+      {
+        "gene_symbol": "ERBB2",
+        "gene_info": {
+          "association_strength": "strong",
+          "reference": "PMID: 11262453|PMID: 11154273",
+          "mutations": [
+            "Amplification",
+            "Missense"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "ERBB2 amplification/overexpression is used for diagnosis and subtyping of breast cancer.",
+          "therapeutic_relevance": "ERBB2-targeted therapies (e.g., trastuzumab, pertuzumab, T-DM1) are standard of care for ERBB2-positive breast cancer."
+        }
+      }..................
+    ],
     "molecular_subtypes": [
-      "Squamous",
-      "Pancreatic Progenitor",
-      "Immunogenic",
-      "Aberrantly Differentiated Endocrine Exocrine (ADEX)"
+      "Luminal A",
+      "Luminal B",
+      "ERBB2-enriched",
+      "Basal-like",
+      "Claudin-low",
+      "Normal-like"
     ],
     "associated_pathways": {
-      "ar_signaling": "no",
-      "ar_and_steroid_synthesis_enzymes": "no",
-      "steroid_inactivating_genes": "no",
-      "down_regulated_by_androgen": "no",
+      "ar_signaling": "yes",
+      "ar_and_steroid_synthesis_enzymes": "yes",
+      "steroid_inactivating_genes": "yes",
+      "down_regulated_by_androgen": "yes",
       "rtk_ras_pi3k_akt_signaling": "yes",
       "rb_pathway": "yes",
       "cell_cycle_pathway": "yes",
