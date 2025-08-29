@@ -27,6 +27,17 @@ GSoC project mentors: Ino de Bruijn, Dr. Karl Pichotta, Dr. Chris Fong, Dr. Augu
 
 ## Installation
 
+### Create new virtual environment
+
+```python -m venv llm_lists```
+
+```source llm_lists/bin/activate```
+
+### Clone repository
+
+```git clone https://github.com/SuhasiniLulla/GSoC_2025```
+```cd GSoC_2025```
+
 ### Using `uv`
 
 This project supports `uv` for fast and reproducible Python environments.
@@ -51,9 +62,13 @@ Create a `.env` file in the root directory of the project with the following for
 
 ```touch .env```
 
+```nano .env```
+
 ```LLM_API_KEY= YOUR_LLM_API_KEY_HERE```
 
 ```NCBI_API_KEY= YOUR_NCBI_API_KEY_HERE```
+
+Ctrl+X --> Enter
 
 ## Run Script
 
