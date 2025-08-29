@@ -1,0 +1,132 @@
+{
+  "DSRCT": {
+    "valid_genes": {
+      "EWSR1": "valid(PMIDs:40852926,40834770,40536706,39921935,39682287)",
+      "WT1": "valid",
+      "TP53": "valid",
+      "MYC": "valid",
+      "PIK3CA": "valid",
+      "RB1": "valid"
+    },
+    "valid_pathways": {
+      "rtk_ras_pi3k_akt_signaling": "not valid based on abstracts in PubMed, IDs:",
+      "rb_pathway": "not valid based on abstracts in PubMed, IDs:",
+      "cell_cycle_pathway": "valid(PMIDs:39411551,38966063,38435931,33892407,32279088)",
+      "myc_pathway": "not valid based on abstracts in PubMed, IDs:24812270",
+      "pi3k_pathway": "valid(PMIDs:40536706,35379887,23922674)",
+      "rtk_ras_pathway": "not valid based on abstracts in PubMed, IDs:",
+      "tp53_pathway": "not valid based on abstracts in PubMed, IDs:",
+      "cell_cycle_control": "valid(PMIDs:24321497,17363533,11469351)",
+      "p53_signaling": "valid(PMIDs:24321497)",
+      "dna_damage_response": "valid(PMIDs:39412947,39185596,37457440,34413129,32373525)",
+      "other_growth_proliferation_signaling": "not valid based on abstracts in PubMed, IDs:22142829",
+      "survival_cell_death_regulation_signaling": "not valid based on abstracts in PubMed, IDs:",
+      "telomere_maintenance": "not valid based on abstracts in PubMed, IDs:",
+      "rtk_signaling_family": "not valid based on abstracts in PubMed, IDs:",
+      "pi3k_akt_mtor_signaling": "valid(PMIDs:40536706,23922674)",
+      "ras_raf_mek_erk_jnk_signaling": "not valid based on abstracts in PubMed, IDs:",
+      "angiogenesis": "valid(PMIDs:33004767,32373525,31565186,27580551,24812270)",
+      "folate_transport": "not valid based on abstracts in PubMed, IDs:",
+      "invasion_and_metastasis": "not valid based on abstracts in PubMed, IDs:",
+      "tgf_\u03b2_pathway": "valid(PMIDs:32373525)",
+      "regulation_of_ribosomal_protein_synthesis_and_cell_growth": "valid(PMIDs:28426529,24812270,11960373)"
+    },
+    "valid_molecular_subtypes": {
+      "No established molecular subtypes with clinical implications are currently defined for DSRCT.": "not valid based on abstracts in PubMed, IDs:"
+    },
+    "llm_responses": {
+      "EWSR1": {
+        "is_valid": "yes",
+        "explanation": "Yes, the abstracts mention that Desmoplastic Small Round Cell Tumor is characterized by the EWSR1::WT1 gene fusion."
+      },
+      "rtk_ras_pi3k_akt_signaling": {
+        "is_valid": "no",
+        "explanation": "The provided text is empty and does not contain any information about the association between RTK/RAS/PI3K/AKT signaling and Desmoplastic Small Round Cell Tumor."
+      },
+      "rb_pathway": {
+        "is_valid": "no",
+        "explanation": "The provided text is empty and does not contain information about the association between the RB pathway and Desmoplastic Small Round Cell Tumor."
+      },
+      "cell_cycle_pathway": {
+        "is_valid": "yes",
+        "explanation": "The first article mentions that \"CCND1 genomic gain and Cyclin D1 expression are common features pointing to cell-cycle deregulation as a possible therapeutic target\" in Desmoplastic Small Round Cell Tumors."
+      },
+      "myc_pathway": {
+        "is_valid": "no",
+        "explanation": "The text does not mention the myc pathway in association with Desmoplastic Small Round Cell Tumor."
+      },
+      "pi3k_pathway": {
+        "is_valid": "yes",
+        "explanation": "The PI3K/Akt/mTOR pathway is constitutively activated in Desmoplastic Small Round Cell Tumor, as evidenced by p-Akt expression."
+      },
+      "rtk_ras_pathway": {
+        "is_valid": "no",
+        "explanation": "The provided text is empty and does not mention the RTK RAS pathway or Desmoplastic Small Round Cell Tumor."
+      },
+      "tp53_pathway": {
+        "is_valid": "no",
+        "explanation": "The provided text is empty and does not mention the tp53 pathway or Desmoplastic Small Round Cell Tumor."
+      },
+      "cell_cycle_control": {
+        "is_valid": "yes",
+        "explanation": "The review mentions that secondary molecular alterations, including mutations of cell cycle regulatory genes, are related to progression in Ewing tumors and other solid developmental tumors like desmoplastic small round cell tumor."
+      },
+      "p53_signaling": {
+        "is_valid": "yes",
+        "explanation": "The oncogenic potential of EWS/WT1 in desmoplastic small round cell tumors is unmasked by p53 loss."
+      },
+      "dna_damage_response": {
+        "is_valid": "yes",
+        "explanation": "The genomic analysis of desmoplastic small round cell tumor reveals deregulation of genes related to DNA damage response."
+      },
+      "other_growth_proliferation_signaling": {
+        "is_valid": "no",
+        "explanation": "The text states that no mutations were identified in DSRCT samples, indicating no association between other growth proliferation signaling and Desmoplastic Small Round Cell Tumor."
+      },
+      "survival_cell_death_regulation_signaling": {
+        "is_valid": "no",
+        "explanation": "The provided text is empty and does not contain any information about the association between survival cell death regulation signaling and Desmoplastic Small Round Cell Tumor."
+      },
+      "telomere_maintenance": {
+        "is_valid": "no",
+        "explanation": "The provided text is empty and does not contain any information about telomere maintenance or Desmoplastic Small Round Cell Tumor."
+      },
+      "rtk_signaling_family": {
+        "is_valid": "no",
+        "explanation": "The provided text is empty and does not contain any information about RTK signaling or Desmoplastic Small Round Cell Tumor."
+      },
+      "pi3k_akt_mtor_signaling": {
+        "is_valid": "yes",
+        "explanation": "The article states that in DSRCT, the PI3K/Akt/mTOR pathway is constitutively activated by p-Akt expression in the nuclear compartment of the tumor cells and p-mTOR phosphorylated."
+      },
+      "ras_raf_mek_erk_jnk_signaling": {
+        "is_valid": "no",
+        "explanation": "The provided text is empty and does not contain any information about the association between the Ras Raf Mek Erk Jnk signaling pathway and Desmoplastic Small Round Cell Tumor."
+      },
+      "angiogenesis": {
+        "is_valid": "yes",
+        "explanation": "VEGFR2 inhibition delays tumor growth and enhances chemotherapy activity in Desmoplastic Small Round Cell Tumor."
+      },
+      "folate_transport": {
+        "is_valid": "no",
+        "explanation": "The provided text is empty and does not contain any information about folate transport or Desmoplastic Small Round Cell Tumor."
+      },
+      "invasion_and_metastasis": {
+        "is_valid": "no",
+        "explanation": "The provided text is empty and does not contain any information about Desmoplastic Small Round Cell Tumor or its association with invasion and metastasis."
+      },
+      "tgf_\u03b2_pathway": {
+        "is_valid": "yes",
+        "explanation": "The abstract states that the transforming growth factor (TGF) beta pathway is activated and expressed in Desmoplastic Small Round Cell Tumor (DSRCT) cells."
+      },
+      "regulation_of_ribosomal_protein_synthesis_and_cell_growth": {
+        "is_valid": "yes",
+        "explanation": "The EWS-WT1 translocation product in desmoplastic small round cell tumor induces the interleukin-2/15 receptor beta-chain, leading to a proliferative response."
+      },
+      "No established molecular subtypes with clinical implications are currently defined for DSRCT.": {
+        "is_valid": "no",
+        "explanation": "The provided text does not contain any information about Desmoplastic Small Round Cell Tumor or its molecular subtypes."
+      }
+    }
+  }
+}
