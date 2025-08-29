@@ -13,7 +13,7 @@ OncoTree Integration in cBioPortal: cBioPortal uses OncoTree codes to categorize
 Project overview:
 This project, developed as part of Google Summer of Code 2025, aims to enhance the cBioPortal platform by generating a list of recommended default genes and pathways for each OncoTree code. To achieve this goal, we use prompt engineering to query a Large Language Model (LLM) for structured lists of genes, pathways, and molecular subtypes associated with each OncoTree code, as shown here for the OncoTree code 'PAAD' (Pancreatic Adenocarcinoma):
 
-```yaml
+```JSONasPerl
 {
  "BRCA": {
     "cancer_name": "Invasive Breast Carcinoma",
