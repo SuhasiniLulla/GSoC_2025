@@ -1,6 +1,13 @@
 
 # GSoC 2025: Generate Gene and Pathway Lists for OncoTree Codes using LLM Prompting
 
+## Table of Contents
+
+- [Description](#description)
+
+
+
+
 ## Description
 Background:
 cBioPortal for Cancer Genomics: An open-source platform that enables interactive exploration and visualization of large-scale cancer genomics datasets.[1,2]
