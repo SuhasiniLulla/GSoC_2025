@@ -94,6 +94,19 @@ Parameters:
 '-temp': Temperature setting for LLM, default set at 0.0 for validation.
 
 
+**Example structured outputs**:
+
+LLM gene, pathway, molecular subtypes list generated for OncoTree codes PAAD, COAD, DSRCT, MNM, BRCA, NSCLC:
+https://github.com/SuhasiniLulla/GSoC_2025/blob/main/gene_pathway_lists/export_lists_info_6codes.json
+
+Validation for gene, pathway, molecular subtype associations made with OncoTree code DSRCT:
+https://github.com/SuhasiniLulla/GSoC_2025/blob/main/gene_pathway_lists/validate_genes_pathways_in_references.json
+
+--includes information on whether the association is valid or not, the PMIDs of abstracts input to a second LLM to validate the association, and LLM output with a 1-line explanation of why the association was valid or not.
+
+Validation for gene, pathway, molecular subtype associations made with OncoTree code NSCLC_BRCA_MNM:
+https://github.com/SuhasiniLulla/GSoC_2025/blob/main/gene_pathway_lists/validate_genes_pathways_in_references_NSCLC_BRCA_MNM.json
+
 
 References:
 1.	Cerami, E., et al., The cBio cancer genomics portal: an open platform for exploring multidimensional cancer genomics data. Cancer Discov, 2012. 2(5): p. 401-4.
