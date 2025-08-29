@@ -17,7 +17,9 @@ This project, developed as part of Google Summer of Code 2025, aims to enhance t
 
 This will aid in the identification of mutations relevant to the specific disease being studied.
 For more details, see the project description from the participating organization, cBioPortal for Cancer Genomics, here: https://github.com/cBioPortal/GSoC/issues/114. 
-
+Link to GSoC project page: https://summerofcode.withgoogle.com/myprojects/details/2AJ2V3qf
+Contributor: Suhasini Lulla
+GSoC project mentors: Ino de Bruijn, Dr. Karl Pichotta, Dr. Chris Fong, Dr. Augustin Luna
 
 ## Installation
 
@@ -52,10 +54,11 @@ Create a `.env` file in the root directory of the project with the following for
 ## Run Script
 
 **Run script to generate lists, adding the name of the OncoTree input JSON file**:
-Query an LLM of your choice for genes, pathways, and molecular subtypes associated with each OncoTree code. (Future updates: plan to include selecting the OncoTree code(s) of choice).
+Query an LLM for genes, pathways, and molecular subtypes associated with each OncoTree code. (Future updates: plan to include selecting the OncoTree code(s) of choice).
 For each gene association, the LLM will also output information on the strength of association, mutations, diagnostic potential, therapeutic implications, and whether mutations in this gene are observed in somatic contexts only or can be either germline or somatic.
+The bash script provided has default input parameter variables set and can be run with command below:
 
-```uv run --active generate_lists/llm_mine_gene_pathway_assoc_oncotree.py -i ONCOTREE_FILE.json -o PATH/LLM_OUTPUT.json -model GEMINI_MODEL_NAME```
+``` bash run_validate_gene_pathway_subtype_lists.sh```
 
 Parameters: 
 
@@ -63,11 +66,9 @@ Parameters:
 
 '-o': Path to where you want to store the LLM output and filename of your choice.
 
-'-model': Google Gemini model name of your choice (Future updates: plan to make this open to other LLM models such as those from OpenAI, etc)
+'-model': Google Gemini model name of your choice (Future updates: plan to make this open to other LLM models such as those from OpenAI, etc using LiteLLM)
 
-Example use case with the OncoTree file included in this Repo:
-
-```uv run --active generate_lists/llm_mine_gene_pathway_assoc_oncotree.py -i assets/oncotree_latest_stable_June2025.json -o gene_pathway_lists/export_lists_and_info.json -model gemini-2.0-flash```
+'-temp': Temperature setting for LLM, default set at 0.25
 
 
 **Run script to validate gene, pathway, and molecular subtype lists**:
@@ -76,13 +77,18 @@ Using e-utilities to query PubMed for each gene:cancer-type, pathway:cancer-type
 
 Example use case with the LLM output file and reference gene set file included in this Repo:
 
-```uv run --active generate_lists/validate_genelist.py -i gene_pathway_lists/export_lists_and_info.json -ref assets/mmc1.xlsx```
+```bash run_validate_gene_pathway_subtype_lists.sh```
 
 Parameters: 
 
 '-i': Takes file of generated gene, pathway, molecular subtype lists as produced bythe LLM generate lists script
 
 'ref': Expert established set of gene:cancer-type associations to validate against before using yet another LLM to validate. Here mmc1.xlsx comes from the published gene set for cancer types included in The Cancer Genome Atlas (TCGA) study (PMID:29625053)[4].
+
+'-model': Google Gemini model name of your choice (Future updates: plan to make this open to other LLM models such as those from OpenAI, etc using LiteLLM)
+
+'-temp': Temperature setting for LLM, default set at 0.0 for validation.
+
 
 
 References:
