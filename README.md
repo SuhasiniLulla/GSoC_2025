@@ -17,9 +17,13 @@ This project, developed as part of Google Summer of Code 2025, aims to enhance t
 
 This will aid in the identification of mutations relevant to the specific disease being studied.
 For more details, see the project description from the participating organization, cBioPortal for Cancer Genomics, here: https://github.com/cBioPortal/GSoC/issues/114. 
+
 Link to GSoC project page: https://summerofcode.withgoogle.com/myprojects/details/2AJ2V3qf
+
 Contributor: Suhasini Lulla
+
 GSoC project mentors: Ino de Bruijn, Dr. Karl Pichotta, Dr. Chris Fong, Dr. Augustin Luna
+
 
 ## Installation
 
