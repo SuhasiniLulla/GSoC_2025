@@ -77,7 +77,7 @@ Query an LLM for genes, pathways, and molecular subtypes associated with each On
 For each gene association, the LLM will also output information on the strength of association, mutations, diagnostic potential, therapeutic implications, and whether mutations in this gene are observed in somatic contexts only or can be either germline or somatic.
 The bash script provided has default input parameter variables set and can be run with command below:
 
-``` bash run_validate_gene_pathway_subtype_lists.sh```
+``` bash run_scripts/run_validate_gene_pathway_subtype_lists.sh```
 
 Parameters: 
 
@@ -96,7 +96,7 @@ Using e-utilities to query PubMed for each gene:cancer-type, pathway:cancer-type
 
 Example use case with the LLM output file and reference gene set file included in this Repo:
 
-```bash run_validate_gene_pathway_subtype_lists.sh```
+```bash run_scripts/run_validate_gene_pathway_subtype_lists.sh```
 
 Parameters: 
 
