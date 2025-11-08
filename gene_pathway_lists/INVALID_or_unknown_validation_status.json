@@ -1,0 +1,52 @@
+{
+  "PAAD": {
+    "invalid_genes": {
+      "ZFHX3": {
+        "validation_source": "pubmed_llm",
+        "valid": "no",
+        "details": "based on PMIDs: 31958074",
+        "llm_output": "The text discusses Pancreatic Adenosquamous Carcinoma (PASC), not Pancreatic Adenocarcinoma, and mentions ZFHX3 as a germline mutation in PASC patients."
+      }
+    },
+    "invalid_pathways": {
+      "ras_raf_mek_erk_jnk_signaling": {
+        "validation_source": "pubmed_llm",
+        "valid": "no",
+        "details": "based on PMIDs: 16257181",
+        "llm_output": "The text mentions that K-Ras enhances p38 activity but does not affect the Raf/MEK/ERK cascade and JNK activities in pancreatic adenocarcinoma cells, indicating no association between the entire Ras/Raf/MEK/ERK/JNK pathway and this cancer type."
+      }
+    },
+    "invalid_molecular_subtypes": {
+      "Immunogenic": {
+        "validation_source": "pubmed_llm",
+        "valid": "no",
+        "details": "based on PMIDs: 41179305,41176658,41162621,41142718,41138796",
+        "llm_output": "The provided abstracts do not mention the association between the Immunogenic molecular subtype and Pancreatic Adenocarcinoma."
+      }
+    }
+  },
+  "BRCA": {
+    "invalid_genes": {},
+    "invalid_pathways": {
+      "cell_cycle_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "no",
+        "details": "based on PMIDs: 41170763,41154652,41151916,41111983,41083063",
+        "llm_output": "None of the provided abstracts explicitly mention the association between the 'cell cycle pathway' and 'Invasive Breast Carcinoma'."
+      },
+      "dna_damage_response": {
+        "validation_source": "pubmed_llm",
+        "valid": "no",
+        "details": "based on PMIDs: 41148817,41105513,41083063,41057074,41056651",
+        "llm_output": "The provided text is an error message and does not contain any information about the association between the DNA damage response and Invasive Breast Carcinoma."
+      },
+      "regulation_of_ribosomal_protein_synthesis_and_cell_growth": {
+        "validation_source": "pubmed_llm",
+        "valid": "no",
+        "details": "based on PMIDs: 41193432,41105513,41102510,41088271,40971713",
+        "llm_output": "None of the abstracts mention the regulation of ribosomal protein synthesis and cell growth in association with Invasive Breast Carcinoma; instead, they discuss Triple Negative Breast Cancer, Breast Cancer, and Clear Cell Renal Cell Carcinoma."
+      }
+    },
+    "invalid_molecular_subtypes": {}
+  }
+}
