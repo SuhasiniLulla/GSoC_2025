@@ -1,0 +1,804 @@
+{
+  "PAAD": {
+    "valid_genes": {
+      "KRAS": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "TP53": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "CDKN2A": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "SMAD4": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "ARID1A": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "ATM": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "BRCA1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "BRCA2": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "PALB2": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 40823818,40533854,40155245,39594734,39591547",
+        "llm_output": "The gene PALB2 is associated with Pancreatic Adenocarcinoma, as mutations in PALB2 are found in some patients with this cancer type."
+      },
+      "STK11": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "CDKN2B": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 38821577,38330461,38024139,36451333,36288884",
+        "llm_output": "The gene CDKN2B is associated with Pancreatic Adenocarcinoma, where deletion in this gene was associated with poor survival."
+      },
+      "GNAS": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "KMT2C": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "RNF43": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "ROBO2": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 38297025,34148491,30504844,25719666,24500968",
+        "llm_output": "The gene ROBO2 is associated with the cancer type Pancreatic Adenocarcinoma, where ROBO2 hampers malignant biological behavior and predicts a better prognosis."
+      },
+      "CTNNA1": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 31300513,19375852,14599963,12630765,12532469",
+        "llm_output": "CTNNA1 is identified as one of the metastasis-related genes in a human pancreatic carcinoma cell model, and its abnormal expression is correlated with tumorigenesis, proliferation, differentiation, and metastasis of pancreatic cancer."
+      },
+      "APC": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "ERBB4": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 40317966,38901650,37341059,35512587,32335999",
+        "llm_output": "The gene ERBB4 is associated with Pancreatic Ductal Adenocarcinoma, where its alterations are more frequent in TMB-high PDACs and its signaling is involved in accelerated PDAC development."
+      },
+      "MAP2K4": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "MUC16": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41142718,41026162,38305809,38169540,38136299",
+        "llm_output": "The gene MUC16 is associated with the cancer type Pancreatic Adenocarcinoma, as MUC16 mutations were found in PDX models derived from patients with pancreatic cancer."
+      },
+      "PIK3CA": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "TGFBR2": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "ARID2": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "FBXW7": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "KMT2D": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "NOTCH1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "PREX2": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 35180847,35174643,27111337,26884185,25719666",
+        "llm_output": "The gene PREX2 is mentioned in association with Pancreatic Ductal Adenocarcinomas (PDACs), a subtype of pancreatic cancer, as a new candidate driver of pancreatic carcinogenesis."
+      },
+      "RREB1": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 39999309,39882405,30814490,28810144,27835861",
+        "llm_output": "The gene RREB1 is associated with Pancreatic Adenocarcinoma, as RREB1-induced upregulation of the lncRNA AGAP2-AS1 regulates the proliferation and migration of pancreatic cancer."
+      },
+      "SF3B1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "SMARCA4": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "SPOP": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "EPCAM": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 40380326,38901650,38809542,38754953,38377735",
+        "llm_output": "The gene EPCAM is associated with Pancreatic Ductal Adenocarcinoma, where individuals with a germline heterozygous PV/LPV in EPCAM were assessed for family history of PDAC."
+      },
+      "MLH1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "MSH2": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "MSH6": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 39656390,38809542,38781545,38201484,38173349",
+        "llm_output": "The text mentions that nine patients with Lynch syndrome had mutations in MMR genes, including one patient with a mutation in MSH6, and were diagnosed with Pancreatic Ductal Adenocarcinoma."
+      },
+      "PMS2": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "LATS1": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 39179170,38466617,35455997,32900774,32292505",
+        "llm_output": "Yes, the gene LATS1 is associated with the cancer type Pancreatic Adenocarcinoma, as the text mentions that oncogenic activation of YAP by deletion of Lats1/2 in ductal cells led to the rapid transformation of the pancreas."
+      },
+      "NF1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "PPP6C": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 35247012,31221981",
+        "llm_output": "The text mentions that PPP6C is a driver gene in Pancreatic Adenocarcinoma (PAAD) according to the Cancer Genome Atlas (TCGA) project."
+      },
+      "RASA1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "ROS1": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 40723230,40138743,39893577,39833990,37686416",
+        "llm_output": "The text mentions that further therapeutic developments are ongoing for genetic abnormalities involving the fusion gene ROS1 in Pancreatic Ductal Adenocarcinoma."
+      }
+    },
+    "valid_pathways": {
+      "rtk_ras_pi3k_akt_signaling": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 25736685",
+        "llm_output": "The abstract indicates that MEK1 inhibition in a mouse model of KRAS-driven pancreatic ductal adenocarcinoma (PDAC) leads to sustained activation of the PI3K-AKT-MTOR pathway and activation of receptor tyrosine kinases (RTK)."
+      },
+      "rb_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 40418431,39970873,39915477,39789181,39688109",
+        "llm_output": "The first abstract describes a case of pancreatic adenocarcinoma (PDAC) in a patient with a germline RB1 pathogenic variant, suggesting that biallelic loss of RB1 is an alternative mechanism by which the RB1-pathway can be disrupted in PDAC."
+      },
+      "cell_cycle_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41187942,41174063,41165935,41158265,41154472",
+        "llm_output": "The abstract with PMID 41187942 mentions that Asian patients with Pancreatic Adenocarcinoma had fewer cell-cycle-related mutations compared to White and Black patients."
+      },
+      "hippo_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 40910771,40707469,40436845,40414559,40233847",
+        "llm_output": "The abstract with PMID 40436845 states that dysregulation of the Hippo signaling pathway is observed in pancreatic adenocarcinoma (PAAD)."
+      },
+      "myc_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41165935,41026826,41008809,40964310,40850954",
+        "llm_output": "The article with PMID 40964310 states that MondoA mediates transcriptional coordination between the MYC network and the integrated stress response in pancreatic ductal adenocarcinoma."
+      },
+      "notch_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 40881675,40456400,39709423,39611481,39561094",
+        "llm_output": "The text with PMID 39709423 and 39561094 mentions that the Notch pathway is associated with Pancreatic Adenocarcinoma."
+      },
+      "pi3k_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41170605,41161625,41143762,41134579,41044172",
+        "llm_output": "The abstracts mention that the PI3K pathway is associated with Pancreatic Ductal Adenocarcinoma (PDAC), with one abstract stating that Xihuang Pill (XHP) might regulate multi-target and influence the PI3K/AKT pathway for PDAC treatment and another stating that PTEN oxidation promotes constitutive PI3K signaling in pancreatic cancer."
+      },
+      "rtk_ras_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 38274372,37842857,35231699,33563892,33247676",
+        "llm_output": "The text mentions that poor prognosis was associated with higher TC2N mRNA levels in pancreatic adenocarcinoma and that TC2N transcription was positively correlated with transcription of several other cancer genes including genes from RAS/RTK pathways."
+      },
+      "tp53_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41151908,41145488,41085025,40846754,40828413",
+        "llm_output": "The article titled \"Chemotherapy enhances HMGA1 secretion through the mutant p53-CK2 axis in pancreatic ductal adenocarcinoma cells\" associates the tp53 pathway with pancreatic ductal adenocarcinoma."
+      },
+      "wnt_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41179305,41165935,41151908,41127339,41008809",
+        "llm_output": "The article titled \"CDK4/6 and BET inhibitors synergistically suppress pancreatic tumor growth and epithelial-to-mesenchymal transition by regulating the GSK3\u03b2-mediated Wnt/\u03b2-catenin pathway\" associates the Wnt pathway with Pancreatic Adenocarcinoma."
+      },
+      "cell_cycle_control": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41165935,41036624,41030282,40967374,40530421",
+        "llm_output": "The abstract mentions that UTD1 induced apoptosis and caused G2/M arrest dose-dependently, indicating an effect on cell cycle progression in pancreatic ductal adenocarcinoma (PDAC)."
+      },
+      "p53_signaling": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41145488,41030282,40913851,40889735,40759369",
+        "llm_output": "The article titled \"Novel dual responsive embelin functionalised ZnO nanomaterials amplify DNA damage and induce apoptosis via pERK1/2/p53 pathway in pancreatic ductal adenocarcinoma\" associates the p53 signaling pathway with Pancreatic Ductal Adenocarcinoma."
+      },
+      "notch_signaling": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 40881675,40456400,39709423,39611481,39561094",
+        "llm_output": "The text mentions that targeting pathways like Notch and Hedgehog offers a promising avenue to enhance drug penetration and efficacy in pancreatic ductal adenocarcinoma."
+      },
+      "dna_damage_response": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41183146,41155399,41151897,41130416,41120797",
+        "llm_output": "The article titled \"DNA Damage and Repair in Pancreatic Cancer-The Latest Findings\" discusses the link between DNA damage, DNA repair, and the development and progression of pancreatic cancer."
+      },
+      "other_growth_proliferation_signaling": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 40902319,40744334,40728119,40659704,40460193",
+        "llm_output": "Collagen XVII promotes Pancreatic Ductal Adenocarcinoma tumor growth through regulation of PIK3R5."
+      },
+      "survival_cell_death_regulation_signaling": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41143762,41053142,41015267,40943389,40937577",
+        "llm_output": "The study in PMID:40943389 demonstrates that AS1411 aptamer-conjugated liposomal siRNA targeting MTA2 suppresses PI3K/AKT signaling in pancreatic cancer cells, indicating an association between survival cell death regulation signaling and Pancreatic Ductal Adenocarcinoma."
+      },
+      "rtk_signaling_family": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 38650175,29606349,28294115,17548251",
+        "llm_output": "The second abstract states that angiogenin (ANG) can trigger oncogenic transformation via direct association with EGFR, a member of the receptor tyrosine kinase (RTK) family, in pancreatic ductal adenocarcinoma (PDAC)."
+      },
+      "pi3k_akt_mtor_signaling": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41170605,41161625,41025436,40930362,40767250",
+        "llm_output": "The abstracts consistently associate the PI3K/AKT/mTOR signaling pathway with Pancreatic Adenocarcinoma, indicating its involvement in tumor growth, metastasis, and therapeutic resistance."
+      },
+      "angiogenesis": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41168410,41151881,41148842,41129915,41081532",
+        "llm_output": "The first abstract mentions that HypoxamiRs modulate cellular pathways that promote tumor survival and angiogenesis in pancreatic cancer."
+      },
+      "invasion_and_metastasis": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41151864,41121153,40879959,40875713,40759369",
+        "llm_output": "The abstract states that chemotherapy may select for cancer cells with increased capacity for invasion and metastasis in pancreatic ductal adenocarcinoma (PDAC)."
+      },
+      "tgf_\u03b2_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41127339,41111476,41047671,40953922,40909268",
+        "llm_output": "The abstracts indicate that the TGF-\u03b2 pathway is associated with Pancreatic Adenocarcinoma, with one abstract stating that BMP2 may serve as a therapeutic target in specific tumors via TGF-\u03b2 signaling modulation and another stating that TGF-\u03b2 signaling plays a major role in tumor progression."
+      },
+      "regulation_of_ribosomal_protein_synthesis_and_cell_growth": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41179305,41105513,41053142,41041073,40944757",
+        "llm_output": "The abstract with PMID 41041073 indicates that hsa_circ_0058495 promotes PDAC progression by stabilizing IGF2BP2, which enhances the stability of MEKK1 mRNA, leading to sustained ERK1/2 phosphorylation and consequent promotion of PDAC cell proliferation and invasion."
+      }
+    },
+    "valid_molecular_subtypes": {
+      "Squamous": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41188771,41183744,41111476,41089683,41063864",
+        "llm_output": "The text states that SP140L is linked to poor prognosis in pancreatic adenocarcinoma, which implies an association."
+      },
+      "Pancreatic Progenitor": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41183744,41065843,40727938,40661354,40588523",
+        "llm_output": "The first abstract states that bulk transcriptomic profiling has identified two major gene expression-based molecular subtypes of Pancreatic Ductal Adenocarcinoma (PDAC): classical/progenitor and basal-like/squamous/quasimesenchymal."
+      },
+      "Aberrantly Differentiated Endocrine Exocrine (ADEX)": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 32024063,31739115,29108249,26909576",
+        "llm_output": "The text states that expression analysis defined four subtypes of Pancreatic Ductal Adenocarcinomas, including the aberrantly differentiated endocrine exocrine (ADEX) subtype."
+      },
+      "Basal-like": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41183744,41009646,41003647,40991729,40929627",
+        "llm_output": "The first abstract states that bulk transcriptomic profiling has identified two major gene expression-based molecular subtypes of Pancreatic Ductal Adenocarcinoma (PDAC): classical/progenitor and basal-like/squamous/quasimesenchymal."
+      },
+      "Classical": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41183744,41181446,41159485,41154404,41061701",
+        "llm_output": "The first abstract states that bulk transcriptomic profiling has identified two major gene expression-based molecular subtypes of Pancreatic ductal adenocarcinoma (PDAC): classical/progenitor and basal-like/squamous/quasimesenchymal."
+      },
+      "Exocrine-like": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 37747815,37355152,36900379,36550235,34471425",
+        "llm_output": "The text from PMID:36550235 states that integrated clustering identified an exocrine-like subtype of Pancreatic Ductal Adenocarcinoma."
+      }
+    }
+  },
+  "BRCA": {
+    "valid_genes": {
+      "TP53": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "PIK3CA": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "ERBB2": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "BRCA1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "BRCA2": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "PTEN": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "CDKN2A": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "MAP3K1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "GATA3": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "AKT1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "RB1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "CDH1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "NF1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "ATM": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "CHEK2": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "PALB2": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 40999310,40778244,40613200,40172573,39930910",
+        "llm_output": "The text mentions that individuals had germline DSB repair-related PVs in PALB2 and that Asian patients with breast cancer carrying germline BRCA1/2 PV, even those with a low recurrence risk, have significantly shorter 10-year IDFS than noncarriers."
+      },
+      "RAD51C": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 40172573,39513960,39331289,38123987,36553061",
+        "llm_output": "The gene RAD51C is associated with Invasive Breast Carcinoma, as the study utilized tumor transcriptome data from participants with invasive breast cancer and found that some individuals had germline DNA double-strand break repair-related pathogenic variants in RAD51C."
+      },
+      "RAD51D": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 39658994,39513960,39440754,39331289,39226054",
+        "llm_output": "The gene RAD51D is associated with Invasive Breast Cancer, as pathogenic variants in RAD51D were identified in a study of women with newly diagnosed invasive breast cancer."
+      },
+      "BARD1": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 40805222,40172573,39513960,39440754,39226054",
+        "llm_output": "The text states that among BARD1 mutants, the majority of breast tumors were invasive ductal carcinoma."
+      },
+      "MLH1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "MSH2": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "MSH6": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 39440754,37805766,32868316,30921768,30629139",
+        "llm_output": "The text with PMID 32868316 identifies MSH6 as a suggested breast cancer risk gene in African-American women diagnosed with invasive breast cancer."
+      },
+      "PMS2": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "POLE": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "POLD1": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 30344713,29807012,29279706,16685647",
+        "llm_output": "POLD1 is associated with Invasive Breast Carcinoma, where elevated expression of POLD1 is associated with poor prognosis."
+      },
+      "FGFR1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "FGFR2": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "FGFR3": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "CCND1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "MYC": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "ESR1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "ARID1A": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "TBX3": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "FOXA1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "KMT2C": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "KMT2D": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "SF3B1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "CBFB": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "RUNX1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "MAP2K4": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "FBXW7": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "PPP2R1A": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      },
+      "PIK3R1": {
+        "validation_source": "reference_TCGA_set",
+        "valid": "yes",
+        "details": "found in gene list provided in reference input",
+        "llm_output": null
+      }
+    },
+    "valid_pathways": {
+      "rtk_ras_pi3k_akt_signaling": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 38866361,19860666",
+        "llm_output": "The first abstract mentions that inhibitors of PI3K, AKT, and mTOR exhibit promising efficacy against various cancers such as Invasive Breast Cancer, Lymphoma, Neoplasms, and Hematological malignancies, indicating an association between the RTK/RAS/PI3K/AKT signaling pathway and Invasive Breast Carcinoma."
+      },
+      "rb_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 40204112,40038413,39688109,39308687,38678032",
+        "llm_output": "The abstract from PMID:38678032 mentions that the cell-autonomous E2F1/4-pRb/RBL2 axis regulates self-renewal, chemoresistance and invasiveness of CSCs in both PDAC and breast cancer."
+      },
+      "myc_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41186486,41154652,41096978,40782436,40631997",
+        "llm_output": "The meta-analysis identified MYC as a target gene of miR-21, which is involved in proliferation in breast cancer."
+      },
+      "pi3k_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41141380,41130376,41102702,41059755,41057074",
+        "llm_output": "The abstract with PMID 41057074 states that ATXN3 modulates tumor progression through critical signaling cascades such as the PI3K/Akt pathway in breast cancer."
+      },
+      "rtk_ras_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 38866361,36085291,33247676,32391377,32183997",
+        "llm_output": "MRI-based radiogenomics analysis exhibits excellent performance in predicting genetic pathways alterations, including RTK/RAS, in invasive breast carcinoma."
+      },
+      "tp53_pathway": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 40997746,40849803,40675394,40629431,40604083",
+        "llm_output": "The text mentions that pathogenic alterations in TP53 pathways were observed in 86.3% of residual triple-negative breast cancer (TNBC) samples, which is a subtype of Invasive Breast Carcinoma."
+      },
+      "cell_cycle_control": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41170763,40943427,40882873,40868059,40706396",
+        "llm_output": "The article with PMID 40882873 associates the PHKA1 gene, involved in glucose metabolism, with cell cycle markers and breast cancer."
+      },
+      "p53_signaling": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41154652,41009689,40980146,40849803,40809847",
+        "llm_output": "The abstract states that FAM27E3 promotes PTC lymph node metastasis related to the p53 signaling pathway."
+      },
+      "other_growth_proliferation_signaling": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41059755,41009343,41003932,40848614,40807332",
+        "llm_output": "Invasive Breast Carcinoma is associated with the modulation of SMYD2-EZH2-STAT3 signaling pathway."
+      },
+      "survival_cell_death_regulation_signaling": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41170763,41107912,41009689,41009343,41006587",
+        "llm_output": "The text states that ADH1A overexpression may attenuate the malignant characteristics of TNBC cells by inhibiting the Wnt/\u03b2-catenin signaling pathway, indicating an association between survival cell death regulation signaling and Invasive Breast Carcinoma."
+      },
+      "rtk_signaling_family": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 34403827,31218961,30087699,28848113,26635612",
+        "llm_output": "The article with PMID 30087699 discusses subtyping of Triple Negative Breast Carcinoma on the basis of RTK expression, indicating an association between RTK signaling and this cancer type, which is a subtype of Invasive Breast Carcinoma."
+      },
+      "pi3k_akt_mtor_signaling": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41141380,40997932,40952290,40902741,40885091",
+        "llm_output": "The abstracts provided associate the PI3K/AKT/mTOR signaling pathway with breast cancer, including triple-negative breast cancer, and its progression."
+      },
+      "ras_raf_mek_erk_jnk_signaling": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 35978072",
+        "llm_output": "The text states that Ras-Raf-MEK-Erk/JNK signaling co-occurs with RET alterations, and RET expression is significantly increased in breast invasive carcinoma (BRCA)."
+      }
+    },
+    "valid_molecular_subtypes": {
+      "Luminal A": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41193432,41155378,41151866,41128838,41091344",
+        "llm_output": "The text states that biomarkers were available for 33 occult malignancies (OMs), of which 21 (64%) were luminal A."
+      },
+      "Luminal B": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41128838,41091344,41087999,41081066,41072537",
+        "llm_output": "The study classifies tumors into Luminal A, Luminal B (HER2-negative and HER2-positive), and triple-negative subtypes, indicating an association between Luminal B molecular subtype and Invasive Breast Carcinoma."
+      },
+      "HER2-enriched": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41128838,41076173,41023513,40996005,40960244",
+        "llm_output": "The text states that an echogenic rind was associated with invasive cancer molecular subtype HER2-enriched in breast cancer patients."
+      },
+      "Basal-like": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41084718,40997746,40960244,40780461,40670829",
+        "llm_output": "The text states that FOXC1 promotes the aggressive basal-like phenotype in triple-negative breast cancer."
+      },
+      "Claudin-low": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41170763,39201647,39110274,38881926,38008756",
+        "llm_output": "The text states that Fbln2 mRNA expression is higher in claudin-low breast cancers compared to other subgroups and that RSK3 expression is correlated with EMT and invasion in human claudin-low breast tumors."
+      },
+      "Triple-negative": {
+        "validation_source": "pubmed_llm",
+        "valid": "yes",
+        "details": "based on PMIDs: 41193432,41183358,41183038,41179678,41168787",
+        "llm_output": "The abstracts mention that the Triple-negative molecular subtype is associated with Invasive Breast Carcinoma."
+      }
+    }
+  }
+}

@@ -1,0 +1,1225 @@
+{
+  "PAAD": {
+    "cancer_name": "Pancreatic Adenocarcinoma",
+    "other_codes_used_for_data_gathering": {
+      "NCIt": "C8294",
+      "UMLS": "C0281361"
+    },
+    "associated_genes": [
+      {
+        "gene_symbol": "KRAS",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 33303683 | cBioPortal | COSMIC",
+          "mutations": [
+            "missense",
+            "truncating",
+            "deletion"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: Missense mutations in KRAS are associated with PAAD and used for diagnosis.",
+          "therapeutic_relevance": "clinical trials such as NCT07020221 are actively testing inhibitors of the actionable missense mutation KRAS G12D which is frequent in PAAD. Sotorasib, a G12C inhibitor, has shown limited efficacy in KRAS G12C-mutated pancreatic cancer."
+        }
+      },
+      {
+        "gene_symbol": "TP53",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 33303683 | cBioPortal | COSMIC",
+          "mutations": [
+            "missense",
+            "truncating",
+            "deletion",
+            "copy number alteration"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "TP53 mutations are frequently observed in PAAD and can be used for diagnosis and risk stratification.",
+          "therapeutic_relevance": "Mutations in TP53 can affect response to chemotherapy and radiation therapy. Clinical trials are exploring therapies targeting TP53-mutant cancers."
+        }
+      },
+      {
+        "gene_symbol": "SMAD4",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 33303683 | cBioPortal | COSMIC",
+          "mutations": [
+            "truncating",
+            "deletion",
+            "copy number alteration"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "SMAD4 loss is associated with PAAD and can be used for diagnosis and prognosis.",
+          "therapeutic_relevance": "SMAD4 loss can affect response to TGF-beta pathway inhibitors. Clinical trials are exploring therapies targeting SMAD4-deficient cancers."
+        }
+      },
+      {
+        "gene_symbol": "CDKN2A",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 33303683 | cBioPortal | COSMIC",
+          "mutations": [
+            "truncating",
+            "deletion",
+            "methylation"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "CDKN2A inactivation is associated with PAAD and can be used for diagnosis and prognosis.",
+          "therapeutic_relevance": "CDKN2A loss can affect response to CDK4/6 inhibitors. Clinical trials are exploring therapies targeting CDKN2A-deficient cancers."
+        }
+      },
+      {
+        "gene_symbol": "ATM",
+        "gene_info": {
+          "association_strength": "strong",
+          "reference": "PMID: 28725271 | cBioPortal | COSMIC",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "ATM mutations are associated with PAAD and can be used for diagnosis and prognosis.",
+          "therapeutic_relevance": "ATM mutations can predict sensitivity to PARP inhibitors and platinum-based chemotherapy."
+        }
+      },
+      {
+        "gene_symbol": "BRCA2",
+        "gene_info": {
+          "association_strength": "strong",
+          "reference": "PMID: 28725271 | cBioPortal | COSMIC",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "BRCA2 mutations are associated with PAAD and can be used for diagnosis and prognosis.",
+          "therapeutic_relevance": "BRCA2 mutations can predict sensitivity to PARP inhibitors and platinum-based chemotherapy."
+        }
+      },
+      {
+        "gene_symbol": "BRCA1",
+        "gene_info": {
+          "association_strength": "strong",
+          "reference": "PMID: 28725271 | cBioPortal | COSMIC",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "BRCA1 mutations are associated with PAAD and can be used for diagnosis and prognosis.",
+          "therapeutic_relevance": "BRCA1 mutations can predict sensitivity to PARP inhibitors and platinum-based chemotherapy."
+        }
+      },
+      {
+        "gene_symbol": "PALB2",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 28725271",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "PALB2 mutations are associated with PAAD and can be used for diagnosis and prognosis.",
+          "therapeutic_relevance": "PALB2 mutations can predict sensitivity to PARP inhibitors and platinum-based chemotherapy."
+        }
+      },
+      {
+        "gene_symbol": "STK11",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 20160135",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "STK11 mutations are associated with PAAD.",
+          "therapeutic_relevance": "STK11 mutations may affect response to certain targeted therapies."
+        }
+      },
+      {
+        "gene_symbol": "MLH1",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 11826404",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "MLH1 mutations are associated with PAAD.",
+          "therapeutic_relevance": "MLH1 mutations can predict response to immune checkpoint inhibitors."
+        }
+      },
+      {
+        "gene_symbol": "MSH2",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 11826404",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "MSH2 mutations are associated with PAAD.",
+          "therapeutic_relevance": "MSH2 mutations can predict response to immune checkpoint inhibitors."
+        }
+      },
+      {
+        "gene_symbol": "MSH6",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 11826404",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "MSH6 mutations are associated with PAAD.",
+          "therapeutic_relevance": "MSH6 mutations can predict response to immune checkpoint inhibitors."
+        }
+      },
+      {
+        "gene_symbol": "PMS2",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 11826404",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "PMS2 mutations are associated with PAAD.",
+          "therapeutic_relevance": "PMS2 mutations can predict response to immune checkpoint inhibitors."
+        }
+      },
+      {
+        "gene_symbol": "CTNNB1",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "cBioPortal",
+          "mutations": [
+            "missense"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "CTNNB1 mutations are associated with PAAD.",
+          "therapeutic_relevance": "CTNNB1 mutations may affect response to Wnt signaling inhibitors."
+        }
+      },
+      {
+        "gene_symbol": "GNAS",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "cBioPortal",
+          "mutations": [
+            "missense"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "GNAS mutations are associated with PAAD.",
+          "therapeutic_relevance": "GNAS mutations may affect response to certain targeted therapies."
+        }
+      },
+      {
+        "gene_symbol": "ARID1A",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "cBioPortal",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "ARID1A mutations are associated with PAAD.",
+          "therapeutic_relevance": "ARID1A mutations may affect response to certain targeted therapies."
+        }
+      },
+      {
+        "gene_symbol": "PIK3CA",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "cBioPortal",
+          "mutations": [
+            "missense"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "PIK3CA mutations are associated with PAAD.",
+          "therapeutic_relevance": "PIK3CA mutations may affect response to PI3K inhibitors."
+        }
+      },
+      {
+        "gene_symbol": "KMT2C",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "cBioPortal",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "KMT2C mutations are associated with PAAD.",
+          "therapeutic_relevance": "KMT2C mutations may affect response to epigenetic therapies."
+        }
+      },
+      {
+        "gene_symbol": "RNF43",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "cBioPortal",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "RNF43 mutations are associated with PAAD.",
+          "therapeutic_relevance": "RNF43 mutations may affect response to Wnt signaling inhibitors."
+        }
+      }
+    ],
+    "molecular_subtypes": [
+      "Squamous",
+      "Pancreatic Progenitor",
+      "Immunogenic",
+      "Aberrantly Differentiated Endocrine Exocrine (ADEX)"
+    ],
+    "associated_pathways": {
+      "prostate_cancer_ar_signaling": "no",
+      "prostate_cancer_ar_and_steroid_synthesis_enzymes": "no",
+      "prostate_cancer_steroid_inactivating_genes": "no",
+      "prostate_cancer_down_regulated_by_androgen": "no",
+      "glioblastoma_tp53_pathway": "yes",
+      "glioblastoma_rtk_ras_pi3k_akt_signaling": "yes",
+      "glioblastoma_rb_pathway": "yes",
+      "general_cell_cycle_tcga_pancan_pathways": "yes",
+      "general_hippo_tcga_pancan_pathways": "yes",
+      "general_myc_tcga_pancan_pathways": "yes",
+      "general_notch_tcga_pancan_pathways": "yes",
+      "general_nrf2_tcga_pancan_pathways": "yes",
+      "general_pi3k_tcga_pancan_pathways": "yes",
+      "general_tgf_beta_tcga_pancan_pathways": "yes",
+      "general_rtk_ras_tcga_pancan_pathways": "yes",
+      "general_tp53_tcga_pancan_pathways": "yes",
+      "general_wnt_tcga_pancan_pathways": "yes",
+      "general_cell_cycle_control": "yes",
+      "general_p53_signaling": "yes",
+      "general_notch_signaling": "yes",
+      "general_dna_damage_response": "yes",
+      "general_other_growth_proliferation_signaling": "yes",
+      "general_survival_cell_death_regulation_signaling": "yes",
+      "general_telomere_maintenance": "yes",
+      "general_rtk_signaling_family": "yes",
+      "general_pi3k_akt_mtor_signaling": "yes",
+      "general_ras_raf_mek_erk_jnk_signaling": "yes",
+      "general_angiogenesis": "yes",
+      "general_folate_transport": "yes",
+      "general_invasion_and_metastasis": "yes",
+      "general_tgf_\u03b2_pathway": "yes",
+      "ovarian_cancer_oncogenes_associated_with_epithelial_ovarian_cancer": "no",
+      "ovarian_cancer_putative_tumor_suppressor_genes_in_epithelial_ovarian_cancer": "no",
+      "general_regulation_of_ribosomal_protein_synthesis_and_cell_growth": "yes"
+    }
+  },
+  "COAD": {
+    "cancer_name": "Colon Adenocarcinoma",
+    "other_codes_used_for_data_gathering": {
+      "NCIt": "C4349",
+      "UMLS": "C0338106"
+    },
+    "associated_genes": [
+      {
+        "gene_symbol": "APC",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 8632504 | OMIM: 611731 | GeneReviews: APC-Associated Polyposis Conditions",
+          "mutations": [
+            "truncating",
+            "deletion",
+            "frameshift",
+            "missense"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "diagnostic: APC mutations are associated with increased risk of colon adenocarcinoma and are used for diagnosis.",
+          "therapeutic_relevance": "No direct therapeutic relevance, but identification of APC mutations can guide surveillance and prophylactic surgery decisions."
+        }
+      },
+      {
+        "gene_symbol": "KRAS",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 17921472 | cBioPortal",
+          "mutations": [
+            "missense (G12D, G12V, G13D)",
+            "deletion",
+            "insertion"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: KRAS mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "therapeutic: KRAS mutations predict resistance to anti-EGFR therapies (cetuximab, panitumumab)."
+        }
+      },
+      {
+        "gene_symbol": "TP53",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 28886381 | cBioPortal",
+          "mutations": [
+            "missense",
+            "truncating",
+            "deletion",
+            "splice site"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: TP53 mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "therapeutic: TP53 mutations can affect response to chemotherapy and radiation therapy."
+        }
+      },
+      {
+        "gene_symbol": "PIK3CA",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 17921472 | cBioPortal",
+          "mutations": [
+            "missense (E545K, H1047R)",
+            "amplification"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: PIK3CA mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "therapeutic: PIK3CA mutations may predict response to PI3K inhibitors in clinical trials."
+        }
+      },
+      {
+        "gene_symbol": "BRAF",
+        "gene_info": {
+          "association_strength": "strong",
+          "reference": "PMID: 22328233 | cBioPortal",
+          "mutations": [
+            "missense (V600E)"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: BRAF mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "therapeutic: BRAF V600E mutations predict resistance to anti-EGFR therapies and sensitivity to BRAF inhibitors (vemurafenib, dabrafenib) in combination with MEK inhibitors."
+        }
+      },
+      {
+        "gene_symbol": "MLH1",
+        "gene_info": {
+          "association_strength": "strong",
+          "reference": "PMID: 8533089 | GeneReviews: Lynch Syndrome",
+          "mutations": [
+            "truncating",
+            "missense",
+            "promoter methylation (somatic)"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "diagnostic: MLH1 mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "therapeutic: MLH1 deficiency (due to germline mutation or somatic methylation) predicts response to immune checkpoint inhibitors (pembrolizumab, nivolumab)."
+        }
+      },
+      {
+        "gene_symbol": "MSH2",
+        "gene_info": {
+          "association_strength": "strong",
+          "reference": "PMID: 8533089 | GeneReviews: Lynch Syndrome",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "diagnostic: MSH2 mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "therapeutic: MSH2 deficiency (due to germline mutation) predicts response to immune checkpoint inhibitors (pembrolizumab, nivolumab)."
+        }
+      },
+      {
+        "gene_symbol": "MSH6",
+        "gene_info": {
+          "association_strength": "strong",
+          "reference": "PMID: 8533089 | GeneReviews: Lynch Syndrome",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "diagnostic: MSH6 mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "therapeutic: MSH6 deficiency (due to germline mutation) predicts response to immune checkpoint inhibitors (pembrolizumab, nivolumab)."
+        }
+      },
+      {
+        "gene_symbol": "PMS2",
+        "gene_info": {
+          "association_strength": "strong",
+          "reference": "PMID: 8533089 | GeneReviews: Lynch Syndrome",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "germline/somatic",
+          "diagnostic_implication": "diagnostic: PMS2 mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "therapeutic: PMS2 deficiency (due to germline mutation) predicts response to immune checkpoint inhibitors (pembrolizumab, nivolumab)."
+        }
+      },
+      {
+        "gene_symbol": "SMAD4",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 10496858 | cBioPortal",
+          "mutations": [
+            "deletion",
+            "missense",
+            "truncating"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: SMAD4 mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "No direct therapeutic relevance."
+        }
+      },
+      {
+        "gene_symbol": "FBXW7",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 16844940 | cBioPortal",
+          "mutations": [
+            "missense",
+            "truncating"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: FBXW7 mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "No direct therapeutic relevance."
+        }
+      },
+      {
+        "gene_symbol": "POLE",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 23222526 | cBioPortal",
+          "mutations": [
+            "missense (exonuclease domain)"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: POLE mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "therapeutic: POLE mutations are associated with hypermutation and increased response to immune checkpoint inhibitors."
+        }
+      },
+      {
+        "gene_symbol": "POLD1",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 23222526 | cBioPortal",
+          "mutations": [
+            "missense (exonuclease domain)"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: POLD1 mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "therapeutic: POLD1 mutations are associated with hypermutation and increased response to immune checkpoint inhibitors."
+        }
+      },
+      {
+        "gene_symbol": "PTEN",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 9634582 | cBioPortal",
+          "mutations": [
+            "deletion",
+            "missense",
+            "truncating"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: PTEN mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "No direct therapeutic relevance."
+        }
+      },
+      {
+        "gene_symbol": "NRAS",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "PMID: 23235522 | cBioPortal",
+          "mutations": [
+            "missense (G12D, Q61H)"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: NRAS mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "therapeutic: NRAS mutations predict resistance to anti-EGFR therapies."
+        }
+      },
+      {
+        "gene_symbol": "ATM",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "PMID: 26976444 | cBioPortal",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: ATM mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "No direct therapeutic relevance."
+        }
+      },
+      {
+        "gene_symbol": "ERBB2",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "PMID: 24285427 | cBioPortal",
+          "mutations": [
+            "amplification",
+            "missense"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: ERBB2 mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "therapeutic: ERBB2 amplification may predict response to anti-ERBB2 therapies (trastuzumab, pertuzumab) in clinical trials."
+        }
+      },
+      {
+        "gene_symbol": "CTNNB1",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "PMID: 10373589 | cBioPortal",
+          "mutations": [
+            "missense"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: CTNNB1 mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "No direct therapeutic relevance."
+        }
+      },
+      {
+        "gene_symbol": "SMAD3",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "PMID: 25348683 | cBioPortal",
+          "mutations": [
+            "missense",
+            "truncating"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: SMAD3 mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "No direct therapeutic relevance."
+        }
+      },
+      {
+        "gene_symbol": "ARID1A",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "PMID: 21785428 | cBioPortal",
+          "mutations": [
+            "truncating",
+            "missense"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: ARID1A mutations are associated with colon adenocarcinoma and used for diagnosis.",
+          "therapeutic_relevance": "No direct therapeutic relevance."
+        }
+      }
+    ],
+    "molecular_subtypes": [
+      "Consensus Molecular Subtypes (CMS1-4): CMS1 (MSI-immune), CMS2 (canonical), CMS3 (metabolic), CMS4 (mesenchymal)",
+      "Microsatellite Instability High (MSI-H)",
+      "Microsatellite Stable (MSS)",
+      "Chromosomal Instability (CIN)",
+      "Hypermutated/POLE-mutated"
+    ],
+    "associated_pathways": {
+      "prostate_cancer_ar_signaling": "no",
+      "prostate_cancer_ar_and_steroid_synthesis_enzymes": "no",
+      "prostate_cancer_steroid_inactivating_genes": "no",
+      "prostate_cancer_down_regulated_by_androgen": "no",
+      "glioblastoma_tp53_pathway": "no",
+      "glioblastoma_rtk_ras_pi3k_akt_signaling": "no",
+      "glioblastoma_rb_pathway": "no",
+      "general_cell_cycle_tcga_pancan_pathways": "yes",
+      "general_hippo_tcga_pancan_pathways": "yes",
+      "general_myc_tcga_pancan_pathways": "yes",
+      "general_notch_tcga_pancan_pathways": "yes",
+      "general_nrf2_tcga_pancan_pathways": "yes",
+      "general_pi3k_tcga_pancan_pathways": "yes",
+      "general_tgf_beta_tcga_pancan_pathways": "yes",
+      "general_rtk_ras_tcga_pancan_pathways": "yes",
+      "general_tp53_tcga_pancan_pathways": "yes",
+      "general_wnt_tcga_pancan_pathways": "yes",
+      "general_cell_cycle_control": "yes",
+      "general_p53_signaling": "yes",
+      "general_notch_signaling": "yes",
+      "general_dna_damage_response": "yes",
+      "general_other_growth_proliferation_signaling": "yes",
+      "general_survival_cell_death_regulation_signaling": "yes",
+      "general_telomere_maintenance": "yes",
+      "general_rtk_signaling_family": "yes",
+      "general_pi3k_akt_mtor_signaling": "yes",
+      "general_ras_raf_mek_erk_jnk_signaling": "yes",
+      "general_angiogenesis": "yes",
+      "general_folate_transport": "yes",
+      "general_invasion_and_metastasis": "yes",
+      "general_tgf_\u03b2_pathway": "yes",
+      "ovarian_cancer_oncogenes_associated_with_epithelial_ovarian_cancer": "no",
+      "ovarian_cancer_putative_tumor_suppressor_genes_in_epithelial_ovarian_cancer": "no",
+      "general_regulation_of_ribosomal_protein_synthesis_and_cell_growth": "yes"
+    }
+  },
+  "NSCLC": {
+    "cancer_name": "Non-Small Cell Lung Cancer",
+    "other_codes_used_for_data_gathering": {
+      "NCIt": "C2926",
+      "UMLS": "C0007131"
+    },
+    "associated_genes": [
+      {
+        "gene_symbol": "EGFR",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 15256506 | PMID: 18427683 | PMID: 25439999",
+          "mutations": [
+            "exon 19 deletions",
+            "L858R point mutations",
+            "T790M",
+            "G719X",
+            "Exon 20 insertions"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: EGFR mutations, particularly exon 19 deletions and L858R point mutations, are used to diagnose NSCLC.",
+          "therapeutic_relevance": "therapeutic: EGFR mutations are predictive of response to EGFR-TKIs (tyrosine kinase inhibitors) such as gefitinib, erlotinib, afatinib, osimertinib. T790M mutations confer resistance to first and second generation EGFR-TKIs, but can be overcome by osimertinib. Exon 20 insertions are typically resistant to EGFR TKIs."
+        }
+      },
+      {
+        "gene_symbol": "ALK",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 17993856 | PMID: 20042770 | PMID: 29743676",
+          "mutations": [
+            "EML4-ALK fusion",
+            "Other ALK fusions",
+            "ALK point mutations (resistance mutations)"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: ALK fusions, particularly EML4-ALK, are used to diagnose NSCLC.",
+          "therapeutic_relevance": "therapeutic: ALK fusions are predictive of response to ALK inhibitors such as crizotinib, alectinib, brigatinib, lorlatinib. Certain ALK point mutations confer resistance to specific ALK inhibitors."
+        }
+      },
+      {
+        "gene_symbol": "KRAS",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 24231606 | PMID: 33495469",
+          "mutations": [
+            "G12C",
+            "G12D",
+            "G12V",
+            "Other KRAS mutations"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: KRAS G12C mutations are used to diagnose NSCLC.",
+          "therapeutic_relevance": "therapeutic: KRAS G12C mutations are targetable with sotorasib and adagrasib. Other KRAS mutations are generally considered undruggable, but research is ongoing."
+        }
+      },
+      {
+        "gene_symbol": "ROS1",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 22522534 | PMID: 23519395",
+          "mutations": [
+            "ROS1 fusions (e.g., CD74-ROS1, SLC34A2-ROS1)"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: ROS1 fusions are used to diagnose NSCLC.",
+          "therapeutic_relevance": "therapeutic: ROS1 fusions are predictive of response to ROS1 inhibitors such as crizotinib, entrectinib."
+        }
+      },
+      {
+        "gene_symbol": "BRAF",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 22797643 | PMID: 28346144",
+          "mutations": [
+            "V600E",
+            "Other BRAF mutations"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: BRAF V600E mutations are used to diagnose NSCLC.",
+          "therapeutic_relevance": "therapeutic: BRAF V600E mutations are targetable with BRAF inhibitors (e.g., dabrafenib, vemurafenib) in combination with MEK inhibitors (e.g., trametinib)."
+        }
+      },
+      {
+        "gene_symbol": "MET",
+        "gene_info": {
+          "association_strength": "strong",
+          "reference": "PMID: 22426492 | PMID: 26513316",
+          "mutations": [
+            "MET exon 14 skipping mutations",
+            "MET amplification"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: MET exon 14 skipping mutations and MET amplifications are used to diagnose NSCLC.",
+          "therapeutic_relevance": "therapeutic: MET exon 14 skipping mutations are targetable with MET inhibitors such as capmatinib and tepotinib. MET amplification may predict response to MET inhibitors, but the data is less robust."
+        }
+      },
+      {
+        "gene_symbol": "NTRK1",
+        "gene_info": {
+          "association_strength": "strong",
+          "reference": "PMID: 26375069 | PMID: 28346144",
+          "mutations": [
+            "NTRK1 fusions",
+            "NTRK2 fusions",
+            "NTRK3 fusions"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: NTRK fusions are used to diagnose NSCLC.",
+          "therapeutic_relevance": "therapeutic: NTRK fusions are targetable with NTRK inhibitors such as larotrectinib and entrectinib."
+        }
+      },
+      {
+        "gene_symbol": "NTRK2",
+        "gene_info": {
+          "association_strength": "strong",
+          "reference": "PMID: 26375069 | PMID: 28346144",
+          "mutations": [
+            "NTRK1 fusions",
+            "NTRK2 fusions",
+            "NTRK3 fusions"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: NTRK fusions are used to diagnose NSCLC.",
+          "therapeutic_relevance": "therapeutic: NTRK fusions are targetable with NTRK inhibitors such as larotrectinib and entrectinib."
+        }
+      },
+      {
+        "gene_symbol": "NTRK3",
+        "gene_info": {
+          "association_strength": "strong",
+          "reference": "PMID: 26375069 | PMID: 28346144",
+          "mutations": [
+            "NTRK1 fusions",
+            "NTRK2 fusions",
+            "NTRK3 fusions"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: NTRK fusions are used to diagnose NSCLC.",
+          "therapeutic_relevance": "therapeutic: NTRK fusions are targetable with NTRK inhibitors such as larotrectinib and entrectinib."
+        }
+      },
+      {
+        "gene_symbol": "RET",
+        "gene_info": {
+          "association_strength": "strong",
+          "reference": "PMID: 22237550 | PMID: 28346144",
+          "mutations": [
+            "CCDC6-RET fusion",
+            "KIF5B-RET fusion",
+            "Other RET fusions"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: RET fusions are used to diagnose NSCLC.",
+          "therapeutic_relevance": "therapeutic: RET fusions are targetable with RET inhibitors such as selpercatinib and pralsetinib."
+        }
+      },
+      {
+        "gene_symbol": "TP53",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 21471951 | cBioPortal",
+          "mutations": [
+            "Missense mutations",
+            "Frameshift mutations",
+            "Nonsense mutations",
+            "Splice site mutations",
+            "Deletions"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "TP53 mutations are frequently observed in NSCLC but are not currently used for diagnosis.",
+          "therapeutic_relevance": "TP53 mutations are associated with resistance to chemotherapy and immunotherapy, but are not directly targetable."
+        }
+      },
+      {
+        "gene_symbol": "STK11",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 17585274 | cBioPortal",
+          "mutations": [
+            "Missense mutations",
+            "Frameshift mutations",
+            "Nonsense mutations",
+            "Splice site mutations",
+            "Deletions"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "STK11 mutations are frequently observed in NSCLC but are not currently used for diagnosis.",
+          "therapeutic_relevance": "STK11 mutations are associated with resistance to immunotherapy."
+        }
+      },
+      {
+        "gene_symbol": "KEAP1",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 20811391 | cBioPortal",
+          "mutations": [
+            "Missense mutations",
+            "Frameshift mutations",
+            "Nonsense mutations",
+            "Splice site mutations",
+            "Deletions"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "KEAP1 mutations are frequently observed in NSCLC but are not currently used for diagnosis.",
+          "therapeutic_relevance": "KEAP1 mutations are associated with resistance to chemotherapy and immunotherapy."
+        }
+      },
+      {
+        "gene_symbol": "ERBB2",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 24854978",
+          "mutations": [
+            "Exon 20 insertions",
+            "Amplification"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: HER2 mutations, particularly exon 20 insertions, are used to diagnose NSCLC.",
+          "therapeutic_relevance": "therapeutic: HER2 exon 20 insertions are targetable with poziotinib and trastuzumab deruxtecan. HER2 amplification may predict response to HER2-targeted therapies."
+        }
+      },
+      {
+        "gene_symbol": "DDR2",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 22522534",
+          "mutations": [
+            "Missense mutations",
+            "Amplification"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "diagnostic: DDR2 mutations are used to diagnose NSCLC.",
+          "therapeutic_relevance": "therapeutic: DDR2 mutations are targetable with dasatinib."
+        }
+      },
+      {
+        "gene_symbol": "PIK3CA",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "PMID: 15322109 | cBioPortal",
+          "mutations": [
+            "Missense mutations",
+            "Amplification"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "PIK3CA mutations are frequently observed in NSCLC but are not currently used for diagnosis.",
+          "therapeutic_relevance": "PIK3CA mutations may predict response to PI3K inhibitors, but the data is not conclusive."
+        }
+      },
+      {
+        "gene_symbol": "NRAS",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "cBioPortal",
+          "mutations": [
+            "Missense mutations"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "NRAS mutations are infrequently observed in NSCLC and are not currently used for diagnosis.",
+          "therapeutic_relevance": "NRAS mutations may predict response to MEK inhibitors, but the data is limited."
+        }
+      },
+      {
+        "gene_symbol": "MAP2K1",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "cBioPortal",
+          "mutations": [
+            "Missense mutations"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "MAP2K1 mutations are infrequently observed in NSCLC and are not currently used for diagnosis.",
+          "therapeutic_relevance": "MAP2K1 mutations may predict response to MEK inhibitors, but the data is limited."
+        }
+      },
+      {
+        "gene_symbol": "FGFR1",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "PMID: 22522534",
+          "mutations": [
+            "Amplification"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "FGFR1 amplification is infrequently observed in NSCLC and is not currently used for diagnosis.",
+          "therapeutic_relevance": "FGFR1 amplification may predict response to FGFR inhibitors, but the data is limited."
+        }
+      },
+      {
+        "gene_symbol": "FGFR2",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "PMID: 22522534",
+          "mutations": [
+            "Amplification"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "FGFR2 amplification is infrequently observed in NSCLC and is not currently used for diagnosis.",
+          "therapeutic_relevance": "FGFR2 amplification may predict response to FGFR inhibitors, but the data is limited."
+        }
+      },
+      {
+        "gene_symbol": "FGFR3",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "PMID: 22522534",
+          "mutations": [
+            "Amplification"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "FGFR3 amplification is infrequently observed in NSCLC and is not currently used for diagnosis.",
+          "therapeutic_relevance": "FGFR3 amplification may predict response to FGFR inhibitors, but the data is limited."
+        }
+      },
+      {
+        "gene_symbol": "FGFR4",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "PMID: 22522534",
+          "mutations": [
+            "Amplification"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "FGFR4 amplification is infrequently observed in NSCLC and is not currently used for diagnosis.",
+          "therapeutic_relevance": "FGFR4 amplification may predict response to FGFR inhibitors, but the data is limited."
+        }
+      },
+      {
+        "gene_symbol": "RICTOR",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "cBioPortal",
+          "mutations": [
+            "Amplification"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "RICTOR amplification is infrequently observed in NSCLC and is not currently used for diagnosis.",
+          "therapeutic_relevance": "RICTOR amplification may predict response to mTOR inhibitors, but the data is limited."
+        }
+      },
+      {
+        "gene_symbol": "PTEN",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "cBioPortal",
+          "mutations": [
+            "Deletion",
+            "Mutation"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "PTEN loss is infrequently observed in NSCLC and is not currently used for diagnosis.",
+          "therapeutic_relevance": "PTEN loss may predict response to PI3K/AKT/mTOR inhibitors, but the data is limited."
+        }
+      },
+      {
+        "gene_symbol": "NF1",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "cBioPortal",
+          "mutations": [
+            "Deletion",
+            "Mutation"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "NF1 loss is infrequently observed in NSCLC and is not currently used for diagnosis.",
+          "therapeutic_relevance": "NF1 loss may predict response to MEK inhibitors, but the data is limited."
+        }
+      },
+      {
+        "gene_symbol": "SMARCA4",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "cBioPortal",
+          "mutations": [
+            "Deletion",
+            "Mutation"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "SMARCA4 loss is infrequently observed in NSCLC and is not currently used for diagnosis.",
+          "therapeutic_relevance": "SMARCA4 loss may predict response to EZH2 inhibitors, but the data is limited."
+        }
+      },
+      {
+        "gene_symbol": "CDKN2A",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "cBioPortal",
+          "mutations": [
+            "Deletion",
+            "Mutation"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "CDKN2A loss is infrequently observed in NSCLC and is not currently used for diagnosis.",
+          "therapeutic_relevance": "CDKN2A loss may predict response to CDK4/6 inhibitors, but the data is limited."
+        }
+      }
+    ],
+    "molecular_subtypes": [
+      "Adenocarcinoma",
+      "Squamous cell carcinoma",
+      "Large cell carcinoma",
+      "KRAS-mutant",
+      "EGFR-mutant",
+      "ALK-rearranged",
+      "ROS1-rearranged",
+      "BRAF-mutant",
+      "MET-altered",
+      "NTRK-fusion positive",
+      "RET-rearranged",
+      "PD-L1 high",
+      "STK11/LKB1-mutant",
+      "KEAP1-mutant",
+      "TP53-mutant"
+    ],
+    "associated_pathways": {
+      "prostate_cancer_ar_signaling": "no",
+      "prostate_cancer_ar_and_steroid_synthesis_enzymes": "no",
+      "prostate_cancer_steroid_inactivating_genes": "no",
+      "prostate_cancer_down_regulated_by_androgen": "no",
+      "glioblastoma_tp53_pathway": "yes",
+      "glioblastoma_rtk_ras_pi3k_akt_signaling": "yes",
+      "glioblastoma_rb_pathway": "yes",
+      "general_cell_cycle_tcga_pancan_pathways": "yes",
+      "general_hippo_tcga_pancan_pathways": "yes",
+      "general_myc_tcga_pancan_pathways": "yes",
+      "general_notch_tcga_pancan_pathways": "yes",
+      "general_nrf2_tcga_pancan_pathways": "yes",
+      "general_pi3k_tcga_pancan_pathways": "yes",
+      "general_tgf_beta_tcga_pancan_pathways": "yes",
+      "general_rtk_ras_tcga_pancan_pathways": "yes",
+      "general_tp53_tcga_pancan_pathways": "yes",
+      "general_wnt_tcga_pancan_pathways": "yes",
+      "general_cell_cycle_control": "yes",
+      "general_p53_signaling": "yes",
+      "general_notch_signaling": "yes",
+      "general_dna_damage_response": "yes",
+      "general_other_growth_proliferation_signaling": "yes",
+      "general_survival_cell_death_regulation_signaling": "yes",
+      "general_telomere_maintenance": "yes",
+      "general_rtk_signaling_family": "yes",
+      "general_pi3k_akt_mtor_signaling": "yes",
+      "general_ras_raf_mek_erk_jnk_signaling": "yes",
+      "general_angiogenesis": "yes",
+      "general_folate_transport": "no",
+      "general_invasion_and_metastasis": "yes",
+      "general_tgf_\u03b2_pathway": "yes",
+      "ovarian_cancer_oncogenes_associated_with_epithelial_ovarian_cancer": "no",
+      "ovarian_cancer_putative_tumor_suppressor_genes_in_epithelial_ovarian_cancer": "no",
+      "general_regulation_of_ribosomal_protein_synthesis_and_cell_growth": "yes"
+    }
+  },
+  "DSRCT": {
+    "cancer_name": "Desmoplastic Small Round Cell Tumor",
+    "other_codes_used_for_data_gathering": {
+      "NCIt": "C8300",
+      "UMLS": "C0281508"
+    },
+    "associated_genes": [
+      {
+        "gene_symbol": "EWSR1",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 26335437 | PMID: 28886380 | WHO Classification of Tumours, 5th Edition, Soft Tissue and Bone Tumours",
+          "mutations": [
+            "fusion"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "Diagnostic: The EWSR1-WT1 fusion is pathognomonic for DSRCT and is used for diagnosis.",
+          "therapeutic_relevance": "The EWSR1-WT1 fusion is a potential therapeutic target, but no specific therapies directly target the fusion protein. Clinical trials are exploring therapies targeting downstream pathways affected by the fusion. PMID: 26335437 | PMID: 28886380"
+        }
+      },
+      {
+        "gene_symbol": "WT1",
+        "gene_info": {
+          "association_strength": "very strong",
+          "reference": "PMID: 26335437 | PMID: 28886380 | WHO Classification of Tumours, 5th Edition, Soft Tissue and Bone Tumours",
+          "mutations": [
+            "fusion"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "Diagnostic: The EWSR1-WT1 fusion is pathognomonic for DSRCT and is used for diagnosis.",
+          "therapeutic_relevance": "WT1 is a potential therapeutic target, and clinical trials are exploring therapies targeting WT1 expression. PMID: 26335437 | PMID: 28886380"
+        }
+      },
+      {
+        "gene_symbol": "SMARCA4",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 31447094 | PMID: 32826344",
+          "mutations": [
+            "truncating",
+            "missense",
+            "deletion"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "Emerging evidence suggests that alterations in genes involved in chromatin remodeling and transcriptional regulation may contribute to DSRCT pathogenesis, but are not currently used for diagnosis.",
+          "therapeutic_relevance": "Targeting chromatin remodeling pathways may offer therapeutic opportunities in DSRCT. Further research is needed to validate these targets. PMID: 31447094 | PMID: 32826344"
+        }
+      },
+      {
+        "gene_symbol": "ARID1A",
+        "gene_info": {
+          "association_strength": "moderate",
+          "reference": "PMID: 31447094 | PMID: 32826344",
+          "mutations": [
+            "truncating",
+            "missense",
+            "deletion"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "Emerging evidence suggests that alterations in genes involved in chromatin remodeling and transcriptional regulation may contribute to DSRCT pathogenesis, but are not currently used for diagnosis.",
+          "therapeutic_relevance": "Targeting chromatin remodeling pathways may offer therapeutic opportunities in DSRCT. Further research is needed to validate these targets. PMID: 31447094 | PMID: 32826344"
+        }
+      },
+      {
+        "gene_symbol": "TP53",
+        "gene_info": {
+          "association_strength": "weak",
+          "reference": "PMID: 33303345",
+          "mutations": [
+            "missense",
+            "truncating"
+          ],
+          "mutation_origin": "somatic",
+          "diagnostic_implication": "TP53 mutations are not diagnostic for DSRCT, but may indicate a more aggressive disease course.",
+          "therapeutic_relevance": "TP53 mutations may influence response to chemotherapy and radiation therapy. PMID: 33303345"
+        }
+      }
+    ],
+    "molecular_subtypes": [
+      "No established molecular subtypes with clinical implications are currently defined for DSRCT."
+    ],
+    "associated_pathways": {
+      "prostate_cancer_ar_signaling": "no",
+      "prostate_cancer_ar_and_steroid_synthesis_enzymes": "no",
+      "prostate_cancer_steroid_inactivating_genes": "no",
+      "prostate_cancer_down_regulated_by_androgen": "no",
+      "glioblastoma_tp53_pathway": "no",
+      "glioblastoma_rtk_ras_pi3k_akt_signaling": "no",
+      "glioblastoma_rb_pathway": "no",
+      "general_cell_cycle_tcga_pancan_pathways": "yes",
+      "general_hippo_tcga_pancan_pathways": "no",
+      "general_myc_tcga_pancan_pathways": "yes",
+      "general_notch_tcga_pancan_pathways": "no",
+      "general_nrf2_tcga_pancan_pathways": "no",
+      "general_pi3k_tcga_pancan_pathways": "yes",
+      "general_tgf_beta_tcga_pancan_pathways": "yes",
+      "general_rtk_ras_tcga_pancan_pathways": "yes",
+      "general_tp53_tcga_pancan_pathways": "yes",
+      "general_wnt_tcga_pancan_pathways": "no",
+      "general_cell_cycle_control": "yes",
+      "general_p53_signaling": "yes",
+      "general_notch_signaling": "no",
+      "general_dna_damage_response": "yes",
+      "general_other_growth_proliferation_signaling": "yes",
+      "general_survival_cell_death_regulation_signaling": "yes",
+      "general_telomere_maintenance": "no",
+      "general_rtk_signaling_family": "yes",
+      "general_pi3k_akt_mtor_signaling": "yes",
+      "general_ras_raf_mek_erk_jnk_signaling": "yes",
+      "general_angiogenesis": "yes",
+      "general_folate_transport": "yes",
+      "general_invasion_and_metastasis": "yes",
+      "general_tgf_\u03b2_pathway": "yes",
+      "ovarian_cancer_oncogenes_associated_with_epithelial_ovarian_cancer": "no",
+      "ovarian_cancer_putative_tumor_suppressor_genes_in_epithelial_ovarian_cancer": "no",
+      "general_regulation_of_ribosomal_protein_synthesis_and_cell_growth": "yes"
+    }
+  }
+}
