@@ -13,9 +13,14 @@ from dotenv import load_dotenv
 from litellm import completion
 from pydantic import BaseModel
 
+from lxml import etree
+
+
 load_dotenv()
 YOUR_API_KEY = os.getenv("LLM_API_KEY")
 NCBI_API_KEY = os.getenv("NCBI_API_KEY")
+#DEBUG = os.getenv("DEBUG", "").strip().lower() in ("true", "1", "yes", "y", "on")
+DEBUG = True
 
 # Set API keys for providers
 #os.environ["OPENAI_API_KEY"] = YOUR_API_KEY
@@ -27,6 +32,22 @@ class Answer(BaseModel):
     is_valid: Literal["yes", "no", "unknown"]
     explanation: str
 
+
+def extract_article_info(xml_string):
+    root = etree.fromstring(xml_string.encode('utf-8'))
+    results = []
+    for article in root.findall('.//PubmedArticle'):
+        pmid_el = article.find('.//MedlineCitation/PMID')
+        title_el = article.find('.//Article/ArticleTitle')
+        # gather all abstract-text nodes
+        abs_nodes = article.findall('.//Article/Abstract//AbstractText')
+        abstract = " ".join([node.text.strip() for node in abs_nodes if node.text and node.text.strip()])
+        results.append({
+            'pmid': pmid_el.text if pmid_el is not None else None,
+            'title': title_el.text.strip() if title_el is not None and title_el.text else None,
+            'abstract': abstract if abstract else None
+        })
+    return results
 
 def generate_json_schema(model: BaseModel) -> Dict[str, Any]:
     schema = {"type": "object", "properties": {}, "required": []}
@@ -158,7 +179,11 @@ def esearch_efetch(query):
         }
         response_efetch = requests.get(efetch_url, params=params, timeout=(3, 30))
         time.sleep(0.3)
-        output = response_efetch.text
+        xml_string = response_efetch.text
+        output = extract_article_info(xml_string)
+
+        #if DEBUG: 
+            #print(f"DEBUG: eUtils output: {output}")
     else:
         output = "no PMIDs found"
         id_string = "None"
@@ -179,6 +204,8 @@ def llm_to_validate_association(
             messages=[{"role": "user", "content": current_prompt}],
             temperature=temperature,
         )
+        
+        print(f"INFO: Token count: {response.usage.total_tokens}")
 
         response_text = (
             response.choices[0].message.content
@@ -193,6 +220,7 @@ def llm_to_validate_association(
             parsed_json_data_dict = repair_with_llm(response_text, llm_model)
 
         parsed_model = Answer(**parsed_json_data_dict)
+        print(f"LiteLLM response: {parsed_model}")
 
     except Exception as e:
         print(f"  Error processing {cancer_type}: {e}")
