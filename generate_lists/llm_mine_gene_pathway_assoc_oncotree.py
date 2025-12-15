@@ -277,7 +277,7 @@ def generate_lists(
         oncotree_codes_info.items(), start=1
     ):
         percent = (idx / total) * 100
-        print(f"[{idx}/{total}] ({percent:.1f}%) Processing {oncotree_code}...")
+        typer.echo(f"[{idx}/{total}] ({percent:.1f}%) Processing {oncotree_code}...")
 
         if genes_flag:
             current_prompt = PROMPT_TEMPLATE_GENES.format(
@@ -312,9 +312,11 @@ def generate_lists(
                     oncotree_code
                 ] = parsed_model.model_dump()
                 success_count += 1
+                typer.echo(f"INFO: Success processing {oncotree_code}; genes_flag")
 
             except Exception as e:
-                print(f"  Error processing {oncotree_code}: {e}")
+                typer.echo(f"ERROR: Error processing {oncotree_code}: {e}; genes_flag")
+
                 all_results[oncotree_code] = {
                     "error": str(e),
                     "details_provided": details,
@@ -356,9 +358,10 @@ def generate_lists(
                     oncotree_code
                 ] = parsed_model.model_dump()
                 success_count += 1
+                typer.echo(f"INFO: Success processing {oncotree_code}; pathways_flag")
 
             except Exception as e:
-                print(f"  Error processing {oncotree_code}: {e}")
+                typer.echo(f"ERROR: Error processing {oncotree_code}: {e}; pathways_flag")
                 all_results[oncotree_code] = {
                     "error": str(e),
                     "details_provided": details,
@@ -422,9 +425,10 @@ def generate_lists(
                 ] = parsed_model.model_dump()
 
                 success_count += 1
+                typer.echo(f"INFO: Success processing {oncotree_code}; molecular_flag")
 
             except Exception as e:
-                print(f"  Error processing {oncotree_code}: {e}")
+                typer.echo(f"ERROR: Error processing {oncotree_code}: {e}; molecular_flag")
                 all_results[oncotree_code] = {
                     "error": str(e),
                     "details_provided": details,
@@ -433,7 +437,7 @@ def generate_lists(
 
             time.sleep(5)
 
-    print(f"\nFinished: {success_count} succeeded, {fail_count} failed, total {total}.")
+    typer.echo(f"\nFinished: {success_count} succeeded, {fail_count} failed, total {total}.")
 
     with open(output_lists, "w") as f:
         json.dump(all_results, f, indent=2)
