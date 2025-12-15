@@ -44,7 +44,7 @@ class GeneInfo(BaseModel):
     ]
     reference: str
     mutations: List[str]
-    mutation_origin: Literal["germline/somatic", "somatic"]
+    mutation_origin: Literal["germline/somatic", "somatic", "germline"]
     diagnostic_implication: str
     therapeutic_relevance: str
 
@@ -107,7 +107,7 @@ schema_json_genes = generate_json_schema(GenerateGeneLists)
 schema_json_pathways = generate_json_schema(GeneratePathwayLists)
 schema_json_molecularsubtypes = generate_json_schema(GenerateMolecularSubtypeLists)
 
-print("Generated Schema:\n", json.dumps(schema_json_genes, indent=2))
+#print("Generated Schema:\n", json.dumps(schema_json_genes, indent=2))
 
 PROMPT_TEMPLATE_GENES = """You are an expert in clinical cancer genetics, specifically in gene-disease curations (for hereditary and sporadic cancers). Based on scientific literature in PubMed, current genetic testing practices in oncology clinics, gene-disease association curations in ClinGen, OMIM, GeneReviews, and similar expert or peer reviewed resoursces, and public tumor sequencing databases such as cBioPortal, and COSMIC, list the genes, mutations in which are classically associated with {cancer_name} ({oncotree_code}). Different ontologies have different terms/codes to depict the same cancer sub-type. {oncotree_code} is the OncoTree code that is the same as {ncit_code} (NCIt) and {umls_code} (UMLS). Use these codes to gather as much literature/data as possible to provide a comprehensive list of genes in JSON structured format. The associated gene list should be ranked by strength and likelihood of association such that the first gene in the list has the strongest association with the cancer type and the last gene in the list has the weakest association with the cancer type. The gene list should be of high quality, accurate, and should not exceed 50 in count. The JSON should have top-level keys:
 "oncotree_code",
@@ -136,7 +136,7 @@ def retry_with_backoff(func, max_retries=5, base_delay=1, jitter=True):
             wait_time = base_delay * (2**attempt)
             if jitter:
                 wait_time += random.uniform(0, 1)
-            print(f"Attempt {attempt+1} failed: {e}. Retrying in {wait_time:.2f}s...")
+            typer.echo(f"ERROR: Attempt {attempt+1} failed: {e}. Retrying in {wait_time:.2f}s...")
             time.sleep(wait_time)
     raise Exception(f"Failed after {max_retries} retries")
 
@@ -231,10 +231,10 @@ def generate_lists(
         )
         raise typer.Exit(code=1)
 
-    typer.echo(f"Input file path: {input_oncotree}")
+    typer.echo(f"INFO: Input file path: {input_oncotree}")
 
     if not input_oncotree.exists():
-        typer.echo(f"File not found: {input_oncotree}")
+        typer.echo(f"INFO: File not found: {input_oncotree}")
         raise typer.Exit(code=1)
 
     with input_oncotree.open("r") as f:
@@ -243,14 +243,14 @@ def generate_lists(
     # Determine which codes to process
     if all_codes:
         target_codes = {item["code"] for item in oncotree}
-        typer.echo(f"Running for ALL {len(target_codes)} codes in the input file.")
+        typer.echo(f"INFO: Running for ALL {len(target_codes)} codes in the input file.")
     elif codes:
         target_codes = set(codes)
-        typer.echo(f"Running for user-specified codes: {', '.join(target_codes)}")
+        typer.echo(f"INFO: Running for user-specified codes: {', '.join(target_codes)}")
     else:
         target_codes = {"COAD", "NSCLC", "PAAD", "DSRCT", "BRCA", "MNM"}
         typer.echo(
-            f"Running for default set of (COAD, NSCLC, PAAD, DSRCT, BRCA, MNM): {', '.join(target_codes)}"
+            f"INFO: Running for default set of (COAD, NSCLC, PAAD, DSRCT, BRCA, MNM): {', '.join(target_codes)}"
         )
 
     oncotree_codes_info = {}
@@ -264,7 +264,7 @@ def generate_lists(
         oncotree_codes_info[code] = {"name": name, "NCIt": ncit, "UMLS": umls}
 
     if not oncotree_codes_info:
-        typer.echo("No matching OncoTree codes found in input file.")
+        typer.echo("ERROR: No matching OncoTree codes found in input file.")
         raise typer.Exit(code=1)
 
     all_results = {}  # A dictionary to store all the AI's answers
@@ -311,6 +311,11 @@ def generate_lists(
                 all_results.setdefault("genes", {})[
                     oncotree_code
                 ] = parsed_model.model_dump()
+
+                tmp_file = f"tmp/tmp_{oncotree_code}.json"
+                with open(tmp_file, "w") as f:
+                    json.dump(parsed_model.model_dump(), f, indent=2)
+
                 success_count += 1
                 typer.echo(f"INFO: Success processing {oncotree_code}; genes_flag")
 
@@ -399,7 +404,7 @@ def generate_lists(
                     parsed_json_data_dict = repair_with_llm(raw_output, llm_model)
 
                 if "molecular_subtypes" not in parsed_json_data_dict:
-                    print(f"{oncotree_code}: Missing molecular_subtypes, retrying...")
+                    typer.echo(f"{oncotree_code}: Missing molecular_subtypes, retrying...")
 
                     retry_prompt = (
                         current_prompt
