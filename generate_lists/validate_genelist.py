@@ -88,17 +88,17 @@ schema_json = generate_json_schema(Answer)
 PROMPT_TEMPLATE_GENE = """Given these abstracts from PubMed below, Answer 'Yes' or 'No': Is the gene {variable} associated with the cancer type {cancer_type}. Make sure the given text mentions the exact gene and cancer types given and no other abbreviations that could resemble them. Summarize the association made in the given text in 1 line. Output your response in json format with top level keys being 'is_valid' with a literal value of 'yes' or 'no' and 'explanation' with value of not more than 1 sentence explaining association or no association based on the given text. Here is the given text = {efetch_output}.
 """
 
-PROMPT_TEMPLATE_PATHWAY = """Given these abstracts from PubMed below, Answer 'Yes' or 'No': Is the {variable} associated with the cancer type {cancer_type}. 
-Make sure the given text mentions the exact pathway and cancer types given and no other abbreviations that could resemble them. Summarize the association made 
-in the given text in 1 line. Output your response in json format with top level keys being 'is_valid' with a literal value of 'yes' or 'no' and 'explanation' 
-with value of not more than 1 sentence explaining association or no association based on the given text. If the association is unclear, answer 'no' and explain why under 
+PROMPT_TEMPLATE_PATHWAY = """Given these abstracts from PubMed below, Answer 'Yes' or 'No': Is the {variable} associated with the cancer type {cancer_type}.
+Make sure the given text mentions the exact pathway and cancer types given and no other abbreviations that could resemble them. Summarize the association made
+in the given text in 1 line. Output your response in json format with top level keys being 'is_valid' with a literal value of 'yes' or 'no' and 'explanation'
+with value of not more than 1 sentence explaining association or no association based on the given text. If the association is unclear, answer 'no' and explain why under
 'explanation'. Here is the given text = {efetch_output}.
 """
 
-PROMPT_TEMPLATE_MOLECULAR_SUBTYPE = """Given these abstracts from PubMed below, Answer 'Yes' or 'No': Is the {variable} molecular subtype associated with the cancer type {cancer_type}. 
-Make sure the given text mentions the exact molecular subtype and cancer types given and no other abbreviations that could resemble them. Summarize the association made 
-in the given text in 1 line. Output your response in json format with top level keys being 'is_valid' with a literal value of 'yes' or 'no' and 'explanation' 
-with value of not more than 1 sentence explaining association or no association based on the given text. If the association is unclear, answer 'no' and explain why under 
+PROMPT_TEMPLATE_MOLECULAR_SUBTYPE = """Given these abstracts from PubMed below, Answer 'Yes' or 'No': Is the {variable} molecular subtype associated with the cancer type {cancer_type}.
+Make sure the given text mentions the exact molecular subtype and cancer types given and no other abbreviations that could resemble them. Summarize the association made
+in the given text in 1 line. Output your response in json format with top level keys being 'is_valid' with a literal value of 'yes' or 'no' and 'explanation'
+with value of not more than 1 sentence explaining association or no association based on the given text. If the association is unclear, answer 'no' and explain why under
 'explanation'. Here is the given text = {efetch_output}.
 """
 
@@ -258,27 +258,27 @@ def validate(
     input_reference_genelist: Path = typer.Option(
         ...,
         "--input_reference_genelist_filepath",
-        "-ref",
+        "-r",
         help="Path to the supplementary table file with reference OncoTree gene associations",
     ),
     llm_model: str = typer.Option(
         "gpt-4o-mini",
         "--model_name",
-        "-model",
+        "-m",
         help="LLM model name supported by LiteLLM",
     ),
     temperature: float = typer.Option(
         0.0,
         "--input_LLM_temperature",
-        "-temp",
+        "-t",
         help="Temperature setting for LLM: 0 → deterministic, 1 → creative",
     ),
-    genes_flag: bool = typer.Option(False, "--genes", help="Validate gene lists"),
+    genes_flag: bool = typer.Option(False, "--genes", "-g", help="Validate gene lists"),
     pathways_flag: bool = typer.Option(
-        False, "--pathways", help="Validate pathway lists"
+        False, "--pathways", "-p", help="Validate pathway lists"
     ),
     molecular_flag: bool = typer.Option(
-        False, "--molecular", help="Validate molecular subtype lists"
+        False, "--molecular", "-ms", help="Validate molecular subtype lists"
     ),
 ):
 
