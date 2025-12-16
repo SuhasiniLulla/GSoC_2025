@@ -209,3 +209,4 @@ __marimo__/
 # Project specific
 .DS_Store
 tmp/*.json
+README_ignore.md
