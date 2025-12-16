@@ -312,7 +312,7 @@ def generate_lists(
                     oncotree_code
                 ] = parsed_model.model_dump()
 
-                tmp_file = f"tmp/tmp_{oncotree_code}.json"
+                tmp_file = f"tmp/tmp_{oncotree_code}.json".replace("/", "-")
                 with open(tmp_file, "w") as f:
                     json.dump(parsed_model.model_dump(), f, indent=2)
 
