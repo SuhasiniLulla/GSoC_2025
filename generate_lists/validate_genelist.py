@@ -15,16 +15,18 @@ from lxml import etree
 from pydantic import BaseModel
 
 load_dotenv()
-YOUR_API_KEY = os.getenv("LLM_API_KEY")
+
 NCBI_API_KEY = os.getenv("NCBI_API_KEY")
 # DEBUG = os.getenv("DEBUG", "").strip().lower() in ("true", "1", "yes", "y", "on")
 DEBUG = True
 
-# Set API keys for providers
-# os.environ["OPENAI_API_KEY"] = YOUR_API_KEY
-# os.environ["ANTHROPIC_API_KEY"] = YOUR_API_KEY
-os.environ["GOOGLE_API_KEY"] = YOUR_API_KEY
-# os.environ["MISTRAL_API_KEY"] = YOUR_API_KEY
+if "USE_LITELLM_PROXY" not in os.environ:
+    YOUR_API_KEY = os.getenv("LLM_API_KEY")
+    # Set API keys for providers
+    # os.environ["OPENAI_API_KEY"] = YOUR_API_KEY
+    # os.environ["ANTHROPIC_API_KEY"] = YOUR_API_KEY
+    os.environ["GOOGLE_API_KEY"] = YOUR_API_KEY
+    # os.environ["MISTRAL_API_KEY"] = YOUR_API_KEY
 
 
 class Answer(BaseModel):
@@ -112,7 +114,7 @@ def retry_with_backoff(func, max_retries=5, base_delay=1, jitter=True):
             wait_time = base_delay * (2**attempt)
             if jitter:
                 wait_time += random.uniform(0, 1)
-            print(f"Attempt {attempt+1} failed: {e}. Retrying in {wait_time:.2f}s...")
+            typer.echo(f"ERROR: Attempt {attempt+1} failed: {e}. Retrying in {wait_time:.2f}s...")
             time.sleep(wait_time)
     raise Exception(f"Failed after {max_retries} retries")
 
@@ -167,6 +169,7 @@ def esearch_efetch(query):
         "term": query,
         "retmax": 5,
         "usehistory": "y",
+        "sort": "relevance",
         "api_key": NCBI_API_KEY,
     }
     response_esearch = requests.get(url, params=params, timeout=(3, 30))
@@ -175,7 +178,7 @@ def esearch_efetch(query):
     if all_ids:
         # all_ids will now be a list of strings like: ['40823818', '40581509', ...]
         id_string = ",".join(all_ids)
-        print(id_string)
+        typer.echo(f"INFO: ID string: {id_string}")
         ### include this code for ESearch-EFetch
         # assemble the efetch URL
         efetch_url = f"{base}efetch.fcgi"
@@ -215,7 +218,7 @@ def llm_to_validate_association(
             temperature=temperature,
         )
 
-        print(f"INFO: Token count: {response.usage.total_tokens}")
+        typer.echo(f"INFO: Token count: {response.usage.total_tokens}")
 
         response_text = (
             response.choices[0].message.content
@@ -226,17 +229,17 @@ def llm_to_validate_association(
         try:
             parsed_json_data_dict = try_parse_json(response_text)
         except json.JSONDecodeError:
-            print("JSON malformed — attempting LLM repair...")
+            typer.echo("ERROR: JSON malformed — attempting LLM repair...")
             parsed_json_data_dict = repair_with_llm(response_text, llm_model)
 
         # --- Normalize LLM output to lowercase to avoid validation errors ---
         if isinstance(parsed_json_data_dict.get("is_valid"), str):
             parsed_json_data_dict["is_valid"] = parsed_json_data_dict["is_valid"].lower().strip()
         parsed_model = Answer(**parsed_json_data_dict)
-        print(f"LiteLLM response: {parsed_model}")
+        typer.echo(f"INFO: LiteLLM response: {parsed_model}")
 
     except Exception as e:
-        print(f"  Error processing {cancer_type}: {e}")
+        typer.echo(f"ERROR: Error processing {cancer_type}: {e}")
         parsed_model = Answer(is_valid="unknown", explanation="LLM parsing failed")
 
     # Pause to respect the API rate limit
@@ -357,6 +360,8 @@ def validate(
                     else:
                         invalid_genes.setdefault(item, {})[gene["gene_symbol"]] = entry
 
+            typer.echo(f"INFO: Success processing {item}; genes_flag")
+
         # Write valid and invalid results separately per run
         valid_output_path = "gene_pathway_lists/VALID_genes.json"
         invalid_output_path = "gene_pathway_lists/INVALID_genes.json"
@@ -379,7 +384,7 @@ def validate(
                 if value == "yes":
                     pathway_string = " ".join(pathway.split("_"))
                     query = f"{pathway_string} AND {oncotree_llmoutput['pathways'][item]['cancer_name']}"
-                    print(query)
+                    typer.echo(query)
                     esearch_efetch_output, esearch_ids = esearch_efetch(query)
                     if esearch_efetch_output == "no PMIDs found":
                         entry = {
@@ -409,6 +414,8 @@ def validate(
                     else:
                         invalid_pathways.setdefault(item, {})[pathway] = entry
 
+            typer.echo(f"INFO: Success processing {item}; pathways_flag")
+
         # Write valid and invalid results separately per run
         valid_output_path = "gene_pathway_lists/VALID_pathways.json"
         invalid_output_path = "gene_pathway_lists/INVALID_pathways.json"
@@ -429,7 +436,7 @@ def validate(
                 "molecular_subtypes"
             ]:
                 query = f"{molecular_subtype} AND {oncotree_llmoutput['molecular_subtypes'][item]['cancer_name']}"
-                print(query)
+                typer.echo(query)
                 esearch_efetch_output, esearch_ids = esearch_efetch(query)
                 if esearch_efetch_output == "no PMIDs found":
                     entry = {
@@ -462,6 +469,8 @@ def validate(
                     invalid_molecular_subtypes.setdefault(item, {})[
                         molecular_subtype
                     ] = entry
+
+            typer.echo(f"INFO: Success processing {item}; molecular_flag")
 
         # Write valid and invalid results separately per run
         valid_output_path = "gene_pathway_lists/VALID_molecularsubtypes.json"
