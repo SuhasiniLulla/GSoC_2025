@@ -4,7 +4,7 @@ import random
 import re
 import time
 from pathlib import Path
-from typing import Any, Dict, Literal, get_args
+from typing import Any, Dict, List, Literal, get_args
 
 import pandas as pd
 import requests
@@ -276,6 +276,18 @@ def validate(
         "-t",
         help="Temperature setting for LLM: 0 → deterministic, 1 → creative",
     ),
+    codes: List[str] = typer.Option(
+        None,
+        "--codes",
+        "-c",
+        help="Specific OncoTree codes to process (repeat '-c' flag for each code: e.g. -c BRCA -c PAAD).",
+    ),
+    all_codes: bool = typer.Option(
+        False,
+        "--all",
+        "-a",
+        help="If set, process ALL OncoTree codes in the input file (overrides --codes).",
+    ),
     genes_flag: bool = typer.Option(False, "--genes", "-g", help="Validate gene lists"),
     pathways_flag: bool = typer.Option(
         False, "--pathways", "-p", help="Validate pathway lists"
@@ -299,6 +311,7 @@ def validate(
         typer.echo(f"File not found: {input_reference_genelist}")
         raise typer.Exit(code=1)
 
+
     tcgaset = pd.read_excel(input_reference_genelist, sheet_name="Table S1")
     tcgaset.columns = tcgaset.iloc[2].tolist()
     tcgaset = tcgaset[3:]
@@ -308,7 +321,25 @@ def validate(
     reference_gene_list = []
 
     if genes_flag:
+        # Determine which codes to process
+        if all_codes:
+            target_codes = {item for item in oncotree_llmoutput["genes"]}
+            typer.echo(f"INFO: Running for ALL {len(target_codes)} codes in the input file.")
+        elif codes:
+            target_codes = set(codes)
+            typer.echo(f"INFO: Running for user-specified codes: {', '.join(target_codes)}")
+        else:
+            target_codes = {"COAD", "NSCLC", "PAAD", "DSRCT", "BRCA", "MNM"}
+            typer.echo(
+            f"INFO: Running for default set of (COAD, NSCLC, PAAD, DSRCT, BRCA, MNM): {', '.join(target_codes)}"
+            )
+
+        all_valid_genes = {}
+        all_invalid_genes = {}
+
         for item in oncotree_llmoutput["genes"]:
+            if item not in target_codes:
+                continue
             # Collect per-cancer results
             valid_genes = {}
             invalid_genes = {}
@@ -362,15 +393,29 @@ def validate(
 
             typer.echo(f"INFO: Success processing {item}; genes_flag")
 
+            safe_oncotree_code = item.replace("/", "-")
+            if valid_genes.get(item):
+                all_valid_genes[item] = valid_genes[item]
+                tmp_file_valid = f"tmp/tmp_VALID_{safe_oncotree_code}.json"
+                with open(tmp_file_valid, "w") as f:
+                    json.dump(valid_genes[item], f, indent=2)
+
+            if invalid_genes.get(item):
+                all_invalid_genes[item] = invalid_genes[item]
+                tmp_file_invalid = f"tmp/tmp_INVALID_{safe_oncotree_code}.json"
+                with open(tmp_file_invalid, "w") as f:
+                    json.dump(invalid_genes[item], f, indent=2)
+
+
         # Write valid and invalid results separately per run
         valid_output_path = "gene_pathway_lists/VALID_genes.json"
         invalid_output_path = "gene_pathway_lists/INVALID_genes.json"
 
         with open(valid_output_path, "w") as f:
-            json.dump(valid_genes, f, indent=2)
+            json.dump(all_valid_genes, f, indent=2)
 
         with open(invalid_output_path, "w") as f:
-            json.dump(invalid_genes, f, indent=2)
+            json.dump(all_invalid_genes, f, indent=2)
 
     if pathways_flag:
         for item in oncotree_llmoutput["pathways"]:
