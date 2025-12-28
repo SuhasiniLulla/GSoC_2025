@@ -15,14 +15,10 @@ from pydantic import BaseModel, ConfigDict, Field
 
 load_dotenv()
 
-if "USE_LITELLM_PROXY" not in os.environ:
-    YOUR_API_KEY = os.getenv("LLM_API_KEY")
+# if "USE_LITELLM_PROXY" not in os.environ:
+#     YOUR_API_KEY = os.getenv("LLM_API_KEY")
+#     os.environ["GOOGLE_API_KEY"] = YOUR_API_KEY
 
-    # Set API keys for providers
-    # os.environ["OPENAI_API_KEY"] = YOUR_API_KEY
-    # os.environ["ANTHROPIC_API_KEY"] = YOUR_API_KEY
-    os.environ["GOOGLE_API_KEY"] = YOUR_API_KEY
-    # os.environ["MISTRAL_API_KEY"] = YOUR_API_KEY
 
 
 class AssociatedPathways(BaseModel):

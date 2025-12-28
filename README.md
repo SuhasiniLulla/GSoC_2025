@@ -181,7 +181,14 @@ Create a `.env` file in the root directory of the project with the following for
 
 ```nano .env```
 
-```LLM_API_KEY= YOUR_LLM_API_KEY_HERE```
+```LLM_API_KEY= YOUR_LLM_API_KEY_HERE``` (Deprecated: Use provider-specific keys below)
+
+For LiteLLM to work with your specific provider, set the appropriate environment variable:
+
+- **Google Gemini**: `GOOGLE_API_KEY=your_key`
+- **OpenAI**: `OPENAI_API_KEY=your_key`
+- **Anthropic**: `ANTHROPIC_API_KEY=your_key`
+- etc.
 
 ```NCBI_API_KEY= YOUR_NCBI_API_KEY_HERE```
 

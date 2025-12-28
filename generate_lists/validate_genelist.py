@@ -20,13 +20,9 @@ NCBI_API_KEY = os.getenv("NCBI_API_KEY")
 # DEBUG = os.getenv("DEBUG", "").strip().lower() in ("true", "1", "yes", "y", "on")
 DEBUG = True
 
-if "USE_LITELLM_PROXY" not in os.environ:
-    YOUR_API_KEY = os.getenv("LLM_API_KEY")
-    # Set API keys for providers
-    # os.environ["OPENAI_API_KEY"] = YOUR_API_KEY
-    # os.environ["ANTHROPIC_API_KEY"] = YOUR_API_KEY
-    os.environ["GOOGLE_API_KEY"] = YOUR_API_KEY
-    # os.environ["MISTRAL_API_KEY"] = YOUR_API_KEY
+# if "USE_LITELLM_PROXY" not in os.environ:
+#     YOUR_API_KEY = os.getenv("LLM_API_KEY")
+#     os.environ["GOOGLE_API_KEY"] = YOUR_API_KEY
 
 
 class Answer(BaseModel):
