@@ -14,7 +14,7 @@ ONCOTREE_TRY2="BRCA"
 python generate_lists/llm_mine_gene_pathway_assoc_oncotree.py \
     -i "$INPUT_FILE" \
     -o "$OUTPUT_FILE"\
-    -model "$MODEL_NAME" \
+    -model "$MODEL_NAME" \ # Supports any model: e.g. gpt-4o, claude-3-5-sonnet, gemini/gemini-pro
     -temp "$TEMPERATURE" \
     -c "$ONCOTREE_TRY1" \
     -c "$ONCOTREE_TRY2"
